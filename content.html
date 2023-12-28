@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Channel Content</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/content.css">
+    <script src="https://kit.fontawesome.com/19269a2251.js" crossorigin="anonymous"></script>
+</head>
+<body background="CSS/admindashback.jpg">
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Video</th>
+                    <th>Visibility</th>
+                    <th>Views</th>
+                    <th>Stars</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="movie-clip">
+                        <a href="your_movie_clip_url_here">
+                            <img src="image/aot.jpg" alt="Movie Clip Thumbnail">
+                            Attack on Titan
+                        </a>
+                    </td>
+                    <td class="public">
+                        <div class="visibility-dropdown">
+                            <i class="fa-solid fa-eye"></i>
+                            <select>
+                                <option value="public" selected>Public</option>
+                                <option value="private">Private</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>100,000</td>
+                    <td>10,000</td>
+                </tr>
+                <tr>
+                    <td class="movie-clip">
+                        <a href="your_movie_clip_url_here">
+                            <img src="image/titanic.jpeg" alt="Movie Clip Thumbnail">
+                            Titanic
+                        </a>
+                    </td>
+                    <td class="private">
+                        <div class="visibility-dropdown">
+                            <i class="visibility-icon private fas fa-lock"></i>
+                            <select>
+                                <option value="public">Public</option>
+                                <option value="private" selected>Private</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>50,000</td>
+                    <td>5,000</td>
+                </tr>
+                <td class="movie-clip">
+                    <a href="your_movie_clip_url_here">
+                        <img src="image/harry.jpg" alt="Movie Clip Thumbnail">
+                        Harry Potter
+                    </a>
+                </td>
+                <td class="private">
+                    <div class="visibility-dropdown">
+                        <i class="visibility-icon private fas fa-lock"></i>
+                        <select>
+                            <option value="public">Public</option>
+                            <option value="private" selected>Private</option>
+                        </select>
+                    </div>
+                </td>
+                <td>50,000</td>
+                <td>5,000</td>
+            </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
