@@ -1,36 +1,39 @@
 /*start of topnav*/
-.topnav {
-  background-color: #c44848a7;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 17px 18px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  background-color: #28666e;
-  color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-  display: none;
-}
+.topnav{
+	background-color: #f4eeee;
+	box-shadow: 0 0 10px rgb(7, 202, 209);
+	overflow: hidden;
+  }
+  .stickyheader{
+	position: sticky;
+	bottom: 20%;
+  }
+  .topnav a {
+	float: left;
+	display: inherit;
+	color: #131010;
+	text-align: center;
+	padding: 20px 18px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+	background-color: #00ffff;
+	color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+	background-color: BLACK;
+	color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+	display: none;
+  }
 
 /* The dropdown container */
 .dropdown {
@@ -43,7 +46,7 @@
   font-size: 16px;  
   border: none;
   outline: none;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -51,7 +54,7 @@
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  background-color: #ddd;
+  background-color: #00ffff;
 }
 
 .dropdown-content {
@@ -82,13 +85,59 @@
 /*end of topnav*/
 
 /*start of footer*/
-footer {
-  text-align: center;
-  padding: 1px;
-  background-color: #c44848a7;
-  color: white;
+Footer {
+	background-color: rgba(255, 255, 255, 0.619);
+	text-align: center;	
+	text-transform: uppercase;
+	padding-top: -10px;
+	margin-top:auto;
+	box-shadow: 0 0 10px rgb(7, 202, 209);
+
 }
-/*start of footer*/
+.content{
+	width:100%;
+	margin: 0 auto;
+	padding-top: 35px;
+}
+footer li{
+	list-style: none;
+	display: inline-block;
+}
+.social-icon a{
+	background: black;
+	color: white;
+	padding: 10px;
+	border-radius: 90px;
+	display: flex;
+	font-size: 25px;	
+	margin-top: 10px;
+	margin-bottom: 5px;	
+}
+.social-icon a:hover{
+	color: #00ffff;
+}
+.footer-link h5, a{
+	float: left;
+	display: inherit;
+	color: #131010;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: -5px;
+    padding: 2px;
+}	
+.footer-link h5:hover{
+	color: #00ffff;
+}
+.footer-bottom{
+	background-color:rgba(0, 4, 5, 0.768);
+	color: rgb(249, 242, 242);
+	padding: 15px;
+	margin-top: 20px;
+}
+.footer-bottom p{
+	margin-bottom: 0px;
+}
+/*end of footer*/
 
 .title {
   color: #ffffff;
