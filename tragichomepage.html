@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tragic Homepage</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="CSS/tragicstyles.css">
+</head>
+
+<body style="background-image: url('image/titanic.jpeg');">
+  <div class="action-category">
+    TRAGIC CATEGORY
+  </div>
+  <div class="background-text-container">
+    <img src="logo/titanic.png" alt="Background Image 1" class="background-image" id="bgImage1">
+    <img src="logo/thegreenmilelogo.png" alt="Background Image 2" class="background-image" id="bgImage2">
+    <img src="logo/allthebrightlogo.png" alt="Background Image 2" class="background-image" id="bgImage3">
+    <img src="logo/onepiecelogo.png" alt="Background Image 2" class="background-image" id="bgImage4">
+    <img src="logo/ponyologo.png" alt="Background Image 2" class="background-image" id="bgImage5">
+    <p class="background-text"></p>
+    <div class="star-rating" id="starRating">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>    
+  </div>
+  
+
+  
+
+
+  <div class="container">
+
+
+    <input type="radio" name="slider" class="d-none" id="s1" checked>
+    <input type="radio" name="slider" class="d-none" id="s2">
+    <input type="radio" name="slider" class="d-none" id="s3">
+    <input type="radio" name="slider" class="d-none" id="s4">
+    <input type="radio" name="slider" class="d-none" id="s5">
+
+
+    <div class="cards">
+      <label for="s1" id="slide1">
+        <div class="card">
+          <div class="image">
+            <img src="image/titanic.jpeg" alt="">
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">Titanic</span>
+            <span class="lorem"><b>Release date: </b> February 4, 1998 <br>
+              <b>Director: </b>James Cameron<br>
+              <b>Cast: </b>Kate Winslet | Leonardo DiCaprio | Billy Zane</span>
+          </div>
+          <a href="/contact" class="btn-contact">Watch Trailer</a>
+        </div>
+      </label>
+
+
+
+      <label for="s2" id="slide2">
+        <div class="card">
+          <div class="image">
+            <img src="image/thegreenmile.jpg" alt="">
+            <div class="dots">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">The Green Mile</span>
+            <span class="lorem"><b>Release date: </b> March 15, 2000 <br>
+              <b>Director: </b>Frank Darabont<br>
+              <b>Cast: </b>Michael Clarke Duncan | Tom Hanks | David Morse</span>
+          </div>
+          <a href="/contact" class="btn-contact">Watch Trailer</a>
+        </div>
+      </label>
+
+      <label for="s3" id="slide3">
+        <div class="card">
+          <div class="image">
+            <img src="image/allthebright.jpg" alt="">
+            <div class="dots">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">All the Bright Places</span>
+            <span class="lorem"><b>Release date: </b>February 28, 2020 <br>
+              <b>Director: </b>Brett Haley<br>
+              <b>Cast: </b>Justice Smith | Elle Fanning | Felix Mallard</span>
+          </div>
+          <a href="/contact" class="btn-contact">Watch Trailer</a>
+        </div>
+      </label>
+
+      <label for="s4" id="slide4">
+        <div class="card">
+          <div class="image">
+            <img src="image/onepiece.jpg" alt="">
+            <div class="dots">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">My Girl</span>
+            <span class="lorem"><b>Release date: </b> August 6, 2022 <br>
+              <b>Director: </b>Goro Taniguchi<br>
+              <b>Cast: </b>Mayumi Tanaka | Kaori Nazuka | Yuki Kaji</span>
+          </div>
+          <a href="/contact" class="btn-contact">Watch Trailer</a>
+        </div>
+      </label>
+
+      <label for="s5" id="slide5">
+        <div class="card">
+          <div class="image">
+            <img src="image/ponyo.jpg" alt="">
+            <div class="dots">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">A Walk To Remember</span>
+            <span class="lorem"><b>Release date: </b> July 19, 2008 <br>
+              <b>Director: </b>Christopher Nolan<br>
+              <b>Cast: </b>Liam Neeson | Matt Damon | Cate Blanchett</span>
+          </div>
+          <a href="/contact" class="btn-contact">Watch Trailer</a>
+        </div>
+      </label>
+    </div>
+
+  </div>
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const body = document.body;
+  const cards = document.querySelectorAll('.card');
+  const backgroundContainer = document.querySelector('.background-text-container');
+  const backgroundText = document.querySelector('.background-text');
+  const backgroundImages = document.querySelectorAll('.background-image');
+
+  function changeBy(bg, text, imageId) {
+    body.style.backgroundImage = `url('${bg}')`;
+    backgroundText.textContent = text;
+
+    // Itago lahat ng mga images
+    backgroundImages.forEach(image => {
+      image.style.display = 'none';
+    });
+
+    // I-display lang ang specific image na kailangan
+    const selectedImage = document.getElementById(imageId);
+    if (selectedImage) {
+      selectedImage.style.display = 'block';
+    }
+  }
+
+  // Set initial background text and image
+  changeBy('image/titanic.jpeg', 'James Camerons "Titanic" is an epic, action-packed romance set against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era -- the "ship of dreams" -- which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic in the early hours of April 15, 1912', 'bgImage1');
+
+  cards.forEach((card, index) => {
+  card.addEventListener('click', function () {
+    const imagePath = this.querySelector('img').getAttribute('src');
+    let newText = '';
+    let imageId = '';
+
+    switch (index) {
+      case 0:
+        newText = "James Cameron's Titanic is an epic, action-packed romance set against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era -- the ship of dreams -- which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic in the early hours of April 15, 1912";
+        imageId = 'bgImage1';
+        break;
+      case 1:
+        newText = "After meeting each other, two teenagers struggle with the emotional and physical scars of their pasts. They discover that even the smallest moments can mean something.";
+        imageId = 'bgImage2';
+        break;
+      case 2:
+        newText = "In this animated feature by noted Japanese director Hayao Miyazaki, 10-year-old Chihiro (Rumi Hiiragi) and her parents (Takashi Naitô, Yasuko Sawaguchi) stumble upon a seemingly abandoned amusement park. After her mother and father are turned into giant pigs, Chihiro meets the mysterious Haku (Miyu Irino), who explains that the park is a resort for supernatural beings who need a break from their time spent in the earthly realm, and that she must work there to free herself and her parents.";
+        imageId = 'bgImage3';
+        break;
+      case 3:
+        newText = "Uta is a beloved singer, renowned for concealing her own identity when performing. Her voice is described as otherworldly. Now, for the first time ever, Uta will reveal herself to the world at a live concert.";
+        imageId = 'bgImage4';
+        break;
+      case 4:
+        newText = "During a forbidden excursion to see the surface world, a goldfish princess encounters a human boy named Sosuke, who gives her the name Ponyo. Ponyo longs to become human, and as her friendship with Sosuke grows, she becomes more humanlike. Ponyo's father brings her back to their ocean kingdom, but so strong is Ponyo's wish to live on the surface that she breaks free, and in the process, spills a collection of magical elixirs that endanger Sosuke's village.";
+        imageId = 'bgImage5';
+        break;
+      // Add more cases for other cards
+
+      default:
+        newText = "Background Text Here";
+        imageId = 'bgImage1'; // Default image ID
+    }
+
+    changeBy(imagePath, newText, imageId);
+    document.getElementById('starRating').setAttribute('data-rating');
+  });
+});
+});
+
+
+
+</script>
+
+</html>
