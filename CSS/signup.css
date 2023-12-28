@@ -5,9 +5,9 @@
 	font-family: 'Poppins', sans-serif;
 }
 .logo{
-	background-color:#0b0b0bbd;
+	background-color: #0b0b0bbd;
 	overflow: hidden;
-	width: 166.5%;
+	width: 168.4%;
 	height: 90px;
 	box-shadow: 0 0 50px rgb(7, 202, 209);
 	}
@@ -24,7 +24,7 @@ body{
 	background-image: url("https://wallpapercave.com/wp/wp1945898.jpg");
 }
 .wrapper{
-	margin-top: 10px;
+	margin-top: 80px;
 	margin-left: 550px;
 	margin-bottom: 10px;
 	position: relative;
@@ -66,7 +66,7 @@ h2{
 	width: 320px;
 	height: 40px;
 	font-size: 16px;
-	color: white;
+	color: rgb(243, 241, 241);
  	padding: 0 5px;
     background: transparent;
 	border: none;
@@ -81,7 +81,7 @@ h2{
 
 }
 .remember label{
-	color: white;
+	color: rgb(255, 239, 239);
 	font-size:  14px;; 
 }
 .remember label input{
@@ -101,16 +101,16 @@ button{
 	border: none;
 	outline: none;
 }
-.signUp-Link{
+.signIn-Link{
 	font-size: 14px;
 	text-align: center;
 	margin: 15px 0;
 }
-.signUp-Link p{
-	color: white;
+.signIn-Link p{
+	color: rgb(244, 240, 240);
 }
-.signUp-Link p a{
-	color: rgb(2, 185, 246);
+.signIn-Link p a{
+	color:rgb(2, 185, 246);
 	text-decoration: none;
 	font-weight: 500;
 }
