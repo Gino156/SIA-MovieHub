@@ -49,17 +49,19 @@
     font-family: "Roboto", sans-serif;
     background: url(CSS/loginbg.jpg);
   }
-  /* Style the links inside the navigation bar */
+
   .topnav{
   background-color: #f4eeee;
   box-shadow: 0 0 10px rgb(7, 202, 209);
 	overflow: hidden;
   }
+
   .stickyheader{
   position: sticky;
   bottom: 20%;
   }
-  .topnav a {
+
+  .topnav a{
     float: left;
     display: inherit;
     color: #131010;
@@ -69,36 +71,26 @@
     font-size: 17px;
     }
   
-  /* Change the color of links on hover */
-  .topnav a:hover {
+  .topnav a:hover{
     background-color: #00ffff;
     color: black;
     }
-  
-  /* Add an active class to highlight the current page */
-  .topnav a.active {
+
+  .topnav a.active{
     background-color: BLACK;
     color: white;
     }
   
-  /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
+  .topnav .icon{
 	display: none;
   }
-  
-  /* The dropdown container */
-  .dropdown {
+
+  .dropdown{
 	float: left;
 	overflow: hidden;
   }
-  
-/* The dropdown container */
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
 
-.dropdown .dropbtn {
+.dropdown .dropbtn{
   cursor: pointer;
   font-size: 16px;  
   border: none;
@@ -110,11 +102,11 @@
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
   background-color: #00ffff;
 }
 
-.dropdown-content {
+.dropdown-content{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -123,7 +115,7 @@
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content a{
   float: none;
   color: black;
   padding: 12px 16px;
@@ -132,11 +124,11 @@
   text-align: left;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover{
   background-color: #ddd;
 }
 
-.show {
+.show{
   display: block;
 }
 /*end of topnav*/
@@ -166,46 +158,44 @@
   border-radius:var(--main-radius);
   padding-top:var(--main-padding);
 }
+    /*end of mostrec images */
 
-    /*start of mostrec images */
-
-    div.gallery {
+    div.gallery{
       border: 1px solid #ccc;
     }
     
-    div.gallery:hover {
+    div.gallery:hover{
       border: 1px solid #777;
     }
     
-    div.gallery img {
+    div.gallery img{
       width: 100%;
       height: auto;
     }
     
-    div.desc {
+    div.desc{
       padding: 15px;
       text-align: center;
     }
 
-    .mostrecdesc {
+    .mostrecdesc{
       font-size: 15px;
       margin-top: 20px;
       margin-left: -820px;
     }
 
-    .favoritedesc {
+    .favoritedesc{
       font-size: 15px;
       margin-top: 20px;
       margin-left: -1200px;
     }
 
-    .action {
-      width: 100px; /* Adjust this value for width */
-      height: 100px; /* Adjust this value for height */
+    .action{
+      width: 100px; 
+      height: 100px;
       border-radius: 10%;
-      margin-top: 40px; /* Makes the icon circular, adjust as needed */
+      margin-top: 40px; 
   }
-
 
     .material-symbols-outlined {
       font-variation-settings:
@@ -225,36 +215,28 @@
       box-sizing: border-box;
     }
     
-    .responsive {
+    .responsive{
       padding: 0 6px;
       float: left;
       width: 24.99999%;
     }
     
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 700px){
       .responsive {
-        width: 49.99999%;
+        width: 100%;
         margin: 6px 0;
       }
     }
     
-    @media only screen and (max-width: 500px) {
-      .responsive {
-        width: 100%;
-      }
-    }
-    
-    .clearfix:after {
+    .clearfix:after{
       content: "";
       display: table;
       clear: both;
     }
-
-/*end of mostrec images */
 /*end of mostrec*/
 
 /*footer*/
-#footer {
+#footer{
   padding: 20px 0;
   color: rgb(255, 251, 251);
   font-size: 14px;
@@ -266,51 +248,54 @@
 .movtitle, .footer-bottom, .about{
   margin-bottom: 10px;
 }
+
 .movtitle{
   margin-left: 300px;
 }
 
-.social-icon {
+.social-icon{
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
-  margin-left: 440px; /* Remove the margin to center the social icons */
+  margin-left: 440px;
 }
+
 .social-icon a:hover{
 	color: #00ffff;
 }
-.social-icon li {
-  margin: 0 15px; /* Adjust the margin as needed */
+
+.social-icon li{
+  margin: 0 15px;
 }
 
-.social-icon a {
+.social-icon a{
   text-decoration: none;
   color: rgb(255, 251, 251);
   font-size: 20px;
 }
 
-
-/* Remove the margin-right and add margin-left to .container to center the entire content */
-.container {
+.container{
   margin-left: auto;
   margin-right: auto;
+}
 
+.about{
+  margin-left: -300px;
 }
-.about {
-  margin-left: -300px; /* You can adjust the value as needed */
-}
-.footer-bottom {
+
+.footer-bottom{
   margin-top: 0px;
   background-color: rgba(0, 4, 5, 0.768);
   text-align: center;
 }
+
 .footer-bottom p{
   margin-left: 20px;
   color: white;
 }
 
-.designer {
+.designer{
   color: rgba(255, 255, 255, 0.768);
 }
 

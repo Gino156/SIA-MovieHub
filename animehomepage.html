@@ -30,20 +30,13 @@
       <span></span>
     </div>    
   </div>
-  
-
-  
-
 
   <div class="container">
-
-
     <input type="radio" name="slider" class="d-none" id="s1" checked>
     <input type="radio" name="slider" class="d-none" id="s2">
     <input type="radio" name="slider" class="d-none" id="s3">
     <input type="radio" name="slider" class="d-none" id="s4">
     <input type="radio" name="slider" class="d-none" id="s5">
-
 
     <div class="cards">
       <label for="s1" id="slide1">
@@ -65,8 +58,6 @@
           <a href="/contact" class="btn-contact">Watch Trailer</a>
         </div>
       </label>
-
-
 
       <label for="s2" id="slide2">
         <div class="card">
@@ -148,10 +139,9 @@
         </div>
       </label>
     </div>
-
   </div>
-
 </body>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const body = document.body;
@@ -164,19 +154,16 @@ document.addEventListener('DOMContentLoaded', function () {
     body.style.backgroundImage = `url('${bg}')`;
     backgroundText.textContent = text;
 
-    // Itago lahat ng mga images
     backgroundImages.forEach(image => {
       image.style.display = 'none';
     });
 
-    // I-display lang ang specific image na kailangan
     const selectedImage = document.getElementById(imageId);
     if (selectedImage) {
       selectedImage.style.display = 'block';
     }
   }
 
-  // Set initial background text and image
   changeBy('image/weathering.jpg', 'Set during a period of exceptionally rainy weather, high-school boy Hodaka Morishima runs away from his troubled rural home to Tokyo and befriends an orphan girl who can manipulate the weather.', 'bgImage1');
 
   cards.forEach((card, index) => {
@@ -206,11 +193,10 @@ document.addEventListener('DOMContentLoaded', function () {
         newText = "During a forbidden excursion to see the surface world, a goldfish princess encounters a human boy named Sosuke, who gives her the name Ponyo. Ponyo longs to become human, and as her friendship with Sosuke grows, she becomes more humanlike. Ponyo's father brings her back to their ocean kingdom, but so strong is Ponyo's wish to live on the surface that she breaks free, and in the process, spills a collection of magical elixirs that endanger Sosuke's village.";
         imageId = 'bgImage5';
         break;
-      // Add more cases for other cards
 
       default:
         newText = "Background Text Here";
-        imageId = 'bgImage1'; // Default image ID
+        imageId = 'bgImage1';
     }
 
     changeBy(imagePath, newText, imageId);
@@ -218,9 +204,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 });
-
-
-
 </script>
-
 </html>

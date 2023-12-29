@@ -4,11 +4,13 @@
 	box-shadow: 0 0 10px rgb(7, 202, 209);
 	overflow: hidden;
   }
+
   .stickyheader{
 	position: sticky;
 	bottom: 20%;
   }
-  .topnav a {
+
+  .topnav a{
 	float: left;
 	display: inherit;
 	color: #131010;
@@ -18,30 +20,26 @@
 	font-size: 17px;
   }
   
-  /* Change the color of links on hover */
-  .topnav a:hover {
+  .topnav a:hover{
 	background-color: #00ffff;
 	color: black;
   }
-  
-  /* Add an active class to highlight the current page */
-  .topnav a.active {
+
+  .topnav a.activ{
 	background-color: BLACK;
 	color: white;
   }
   
-  /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
+  .topnav .icon{
 	display: none;
   }
 
-/* The dropdown container */
-.dropdown {
+.dropdown{
   float: left;
   overflow: hidden;
 }
 
-.dropdown .dropbtn {
+.dropdown .dropbtn{
   cursor: pointer;
   font-size: 16px;  
   border: none;
@@ -53,11 +51,11 @@
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
   background-color: #00ffff;
 }
 
-.dropdown-content {
+.dropdown-content{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -66,7 +64,7 @@
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content a{
   float: none;
   color: black;
   padding: 12px 16px;
@@ -75,34 +73,36 @@
   text-align: left;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover{
   background-color: #ddd;
 }
 
-.show {
+.show{
   display: block;
 }
 /*end of topnav*/
 
 /*start of footer*/
-Footer {
+Footer{
 	background-color: rgba(255, 255, 255, 0.619);
 	text-align: center;	
 	text-transform: uppercase;
 	padding-top: -10px;
 	margin-top:auto;
 	box-shadow: 0 0 10px rgb(7, 202, 209);
-
 }
+
 .content{
 	width:100%;
 	margin: 0 auto;
 	padding-top: 35px;
 }
+
 footer li{
 	list-style: none;
 	display: inline-block;
 }
+
 .social-icon a{
 	background: black;
 	color: white;
@@ -113,9 +113,11 @@ footer li{
 	margin-top: 10px;
 	margin-bottom: 5px;	
 }
+
 .social-icon a:hover{
 	color: #00ffff;
 }
+
 .footer-link h5, a{
 	float: left;
 	display: inherit;
@@ -125,27 +127,30 @@ footer li{
 	margin-bottom: -5px;
     padding: 2px;
 }	
+
 .footer-link h5:hover{
 	color: #00ffff;
 }
+
 .footer-bottom{
 	background-color:rgba(0, 4, 5, 0.768);
 	color: rgb(249, 242, 242);
 	padding: 15px;
 	margin-top: 20px;
 }
+
 .footer-bottom p{
 	margin-bottom: 0px;
 }
 /*end of footer*/
 
-.title {
+.title{
   color: #ffffff;
   font-family: 'Bebas Neue', sans-serif;
 }
 
 /*start of cards */
-article {
+article{
   --img-scale: 1.001;
   --title-color: rgb(255, 255, 255);
   --link-icon-translate: -20px;
@@ -159,10 +164,9 @@ article {
   overflow: hidden;
   height: 320px; 
   width: 330px;
-
 }
 
-article a::after {
+article a::after{
   position: absolute;
   inset-block: 0;
   inset-inline: 0;
@@ -170,8 +174,7 @@ article a::after {
   content: "";
 }
 
-/* basic article elements styling */
-article h2 {
+article h2{
   margin: 0 0 18px 0;
   font-family: sans-serif;
   font-size: 1.2rem;
@@ -180,21 +183,21 @@ article h2 {
   transition: color 0.3s ease-out;
 }
 
-figure {
+figure{
   margin: 0;
   padding:0;
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
-article img {
+article img{
   max-width: 100%;
   transform-origin: center;
   transform: scale(var(--img-scale));
   transition: transform 0.4s ease-in-out;
 }
 
-.article-body {
+.article-body{
   padding: 5px;
   font-size: 15px;
 }
@@ -203,22 +206,22 @@ article img {
   color: white;
 }
 
-h2 {
+h2{
   text-align: center;
 }
 
-article a {
+article a{
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   color: #ffffff;
 }
 
-article a:focus {
+article a:focus{
   outline: 1px dotted     #fffffe;
 }
 
-article a .icon {
+article a .icon{
   min-width: 24px;
   width: 24px;
   height: 24px;
@@ -228,8 +231,7 @@ article a .icon {
   transition: all 0.3s;
 }
 
-/* using the has() relational pseudo selector to update our custom properties */
-article:has(:hover, :focus) {
+article:has(:hover, :focus){
   --img-scale: 1.1;
   --title-color: #28666e;
   --link-icon-translate: 0;
@@ -237,18 +239,13 @@ article:has(:hover, :focus) {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-
-/************************ 
-Generic layout (demo looks)
-**************************/
-
 *,
 *::before,
-*::after {
+*::after{
   box-sizing: border-box;
 }
 
-body {
+body{
   margin: 0;
   padding: 48px 0;
   font-family: "Figtree", sans-serif;
@@ -258,7 +255,7 @@ body {
   min-height: 100vh;
 }
 
-.articles {
+.articles{
   display: grid;
   max-width: 1200px;
   margin-inline: auto;
@@ -267,7 +264,7 @@ body {
   gap: 15px;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 960px){
   article {
     container: card/inline-size;
   }
@@ -276,7 +273,7 @@ body {
   }
 }
 
-@container card (min-width: 380px) {
+@container card (min-width: 380px){
   .article-wrapper {
     display: grid;
     grid-template-columns: 100px 1fr;
@@ -297,7 +294,7 @@ body {
   }
 }
 
-.sr-only:not(:focus):not(:active) {
+.sr-only:not(:focus):not(:active){
   clip: rect(0 0 0 0); 
   clip-path: inset(50%);
   height: 1px;

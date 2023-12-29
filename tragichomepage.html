@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tragic Homepage</title>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="CSS/tragicstyles.css">
 </head>
@@ -30,20 +29,13 @@
       <span></span>
     </div>    
   </div>
-  
-
-  
-
 
   <div class="container">
-
-
     <input type="radio" name="slider" class="d-none" id="s1" checked>
     <input type="radio" name="slider" class="d-none" id="s2">
     <input type="radio" name="slider" class="d-none" id="s3">
     <input type="radio" name="slider" class="d-none" id="s4">
     <input type="radio" name="slider" class="d-none" id="s5">
-
 
     <div class="cards">
       <label for="s1" id="slide1">
@@ -65,8 +57,6 @@
           <a href="https://www.youtube.com/watch?v=kVrqfYjkTdQ" class="btn-contact">Watch Trailer</a>
         </div>
       </label>
-
-
 
       <label for="s2" id="slide2">
         <div class="card">
@@ -148,9 +138,7 @@
         </div>
       </label>
     </div>
-
   </div>
-
 </body>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -164,19 +152,16 @@ document.addEventListener('DOMContentLoaded', function () {
     body.style.backgroundImage = `url('${bg}')`;
     backgroundText.textContent = text;
 
-    // Itago lahat ng mga images
     backgroundImages.forEach(image => {
       image.style.display = 'none';
     });
 
-    // I-display lang ang specific image na kailangan
     const selectedImage = document.getElementById(imageId);
     if (selectedImage) {
       selectedImage.style.display = 'block';
     }
   }
 
-  // Set initial background text and image
   changeBy('image/titanic.jpeg', 'James Camerons "Titanic" is an epic, action-packed romance set against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era -- the "ship of dreams" -- which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic in the early hours of April 15, 1912', 'bgImage1');
 
   cards.forEach((card, index) => {
@@ -206,11 +191,10 @@ document.addEventListener('DOMContentLoaded', function () {
         newText = "Set in North Carolina, A Walk To Remember follows the rite of passage of a jaded, aimless high school senior (Shane West) who falls in love with a guileless young woman (Mandy Moore) he and his friends once scorned.";
         imageId = 'bgImage5';
         break;
-      // Add more cases for other cards
 
       default:
         newText = "Background Text Here";
-        imageId = 'bgImage1'; // Default image ID
+        imageId = 'bgImage1';
     }
 
     changeBy(imagePath, newText, imageId);
@@ -218,9 +202,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 });
-
-
-
 </script>
-
 </html>

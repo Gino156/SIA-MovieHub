@@ -31,19 +31,12 @@
     </div>    
   </div>
   
-
-  
-
-
   <div class="container">
-
-
     <input type="radio" name="slider" class="d-none" id="s1" checked>
     <input type="radio" name="slider" class="d-none" id="s2">
     <input type="radio" name="slider" class="d-none" id="s3">
     <input type="radio" name="slider" class="d-none" id="s4">
     <input type="radio" name="slider" class="d-none" id="s5">
-
 
     <div class="cards">
       <label for="s1" id="slide1">
@@ -65,8 +58,6 @@
           <a href="/contact" class="btn-contact">Watch Trailer</a>
         </div>
       </label>
-
-
 
       <label for="s2" id="slide2">
         <div class="card">
@@ -148,10 +139,9 @@
         </div>
       </label>
     </div>
-
   </div>
-
 </body>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const body = document.body;
@@ -164,19 +154,16 @@ document.addEventListener('DOMContentLoaded', function () {
     body.style.backgroundImage = `url('${bg}')`;
     backgroundText.textContent = text;
 
-    // Itago lahat ng mga images
     backgroundImages.forEach(image => {
       image.style.display = 'none';
     });
 
-    // I-display lang ang specific image na kailangan
     const selectedImage = document.getElementById(imageId);
     if (selectedImage) {
       selectedImage.style.display = 'block';
     }
   }
 
-  // Set initial background text and image
   changeBy('image/johnwick.jpg', 'With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.', 'bgImage1');
 
   cards.forEach((card, index) => {
@@ -206,15 +193,14 @@ document.addEventListener('DOMContentLoaded', function () {
         newText = "During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project. Oppenheimer and a team of scientists spend years developing and designing the atomic bomb. Their work comes to fruition on July 16, 1945, as they witness the world's first nuclear explosion, forever changing the course of history.";
         imageId = 'bgImage5';
         break;
-      // Add more cases for other cards
 
       default:
         newText = "Background Text Here";
-        imageId = 'bgImage1'; // Default image ID
+        imageId = 'bgImage1';
     }
 
     changeBy(imagePath, newText, imageId);
-    document.getElementById('starRating').setAttribute('data-rating');
+    document.getElementById('starRating');
   });
 });
 });
