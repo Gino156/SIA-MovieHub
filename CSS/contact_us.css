@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: rgb(11, 1, 1);
+}
+
+body {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
+    background: #00ffff65;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 120vh; 
+    margin: 0; 
+}
+/*start of topnav*/
+.topnav{
+	background-color: #f4eeee;
+	box-shadow: 0 0 10px rgb(7, 202, 209);
+	overflow: hidden;
+  }
+  .stickyheader{
+	position: sticky;
+	bottom: 20%;
+  }
+  .topnav a {
+	float: left;
+	display: inherit;
+	color: #131010;
+	text-align: center;
+	padding: 20px 18px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+	background-color: #00ffff;
+	color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+	background-color: BLACK;
+	color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+	display: none;
+  }
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: #00ffff;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+/*end of topnav*/
+.ContactUs {
+    position: relative;
+    min-height: 100px;
+    padding: 50px 100px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContactUs .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.ContactUs .content h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: black;
+}
+
+.ContactUs .content p {
+    font-weight: 600;
+    color: black;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.container .ContactInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .ContactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.container .ContactInfo .box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.container .ContactInfo .box .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: black;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+.container .ContactInfo .box .text h3 {
+    font-weight: 900;
+    color: black;
+}
+
+.ContactForm {
+    width: 30%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8); /* Set a semi-transparent white background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.ContactForm:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ContactForm h2 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.ContactForm .inputBox {
+    position: relative;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.ContactForm .inputBox input,
+.ContactForm .inputBox textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    outline: none;
+    background: transparent;
+    transition: border-bottom 0.3s ease-in-out;
+}
+
+.ContactForm .inputBox input:focus,
+.ContactForm .inputBox textarea:focus {
+    border-bottom: 2px solid rgba(252, 20, 20, 0.862);
+}
+
+.ContactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out;
+    color: #8e8989;
+}
+
+.ContactForm .inputBox input:focus ~ span,
+.ContactForm .inputBox input:valid ~ span,
+.ContactForm .inputBox textarea:focus ~ span,
+.ContactForm .inputBox textarea:valid ~ span {
+    transform: translateY(-20px);
+    color: red;
+}
+
+.ContactForm .inputBox input[type="submit"] {
+    width: 100%;
+    background: var(--primary-color);
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    color: #ebf8fae6;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.ContactForm .inputBox input[type="submit"]:hover {
+    background: #f46363;
+}
+/*start of footer*/
+Footer {
+	background-color: rgba(255, 255, 255, 0.619);
+	text-align: center;	
+	text-transform: uppercase;
+	padding-top: -10px;
+	margin-top:auto;
+	box-shadow: 0 0 10px rgb(7, 202, 209);
+
+}
+.content{
+	width:100%;
+	margin: 0 auto;
+	padding-top: 35px;
+}
+footer li{
+	list-style: none;
+	display: inline-block;
+}
+.social-icon a{
+	background: black;
+	color: white;
+	padding: 10px;
+	border-radius: 90px;
+	display: flex;
+	font-size: 25px;	
+	margin-top: 10px;
+	margin-bottom: 5px;	
+}
+.social-icon a:hover{
+	color: #00ffff;
+}
+.footer-link h5, a{
+	float: left;
+	display: inherit;
+	color: #131010;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: -5px;
+    padding: 2px;
+}	
+.footer-link h5:hover{
+	color: #00ffff;
+}
+.footer-bottom{
+	background-color:rgba(0, 4, 5, 0.768);
+	color: rgb(249, 242, 242);
+	padding: 15px;
+	margin-top: 20px;
+}
+.footer-bottom p{
+	margin-bottom: 0px;
+}
+/*end of footer*/
+
+@media only screen and (max-width: 768px) {
+    .ContactUs {
+        padding: 50px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container .ContactInfo,
+    .ContactForm {
+        width: 100%;
+    }
+
+    .container .ContactInfo {
+        margin-bottom: 40px;
+    }
+}
+
