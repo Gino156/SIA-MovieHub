@@ -25,6 +25,9 @@ body{
 	min-height: 100vh;
 	background-color: white;
 	background-image: url("https://wallpapercave.com/wp/wp1945898.jpg");
+	background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .wrapper{
