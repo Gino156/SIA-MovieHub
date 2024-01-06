@@ -12,18 +12,26 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get form data
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+// Check if the form was submitted as User or Admin
+if (isset($_POST['user_signup'])) {
+    // Get form data
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-// Insert data into the database
-$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+    // Insert data into the database for User
+    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($conn->query($sql) === TRUE) {
+        // Redirect to loginuser.html
+        header("Location: loginuser.html");
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+} elseif (isset($_POST['admin_signup'])) {
+    // Handle Admin signup if needed
+    // Add your admin signup logic here
 }
 
 // Close the database connection
