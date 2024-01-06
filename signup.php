@@ -7,6 +7,7 @@ $database = "sia_db"; // Replace with your actual database name
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -29,9 +30,26 @@ if (isset($_POST['user_signup'])) {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+    //ADMIN
+    
 } elseif (isset($_POST['admin_signup'])) {
-    // Handle Admin signup if needed
-    // Add your admin signup logic here
+       
+    // Get form data
+       $username = $_POST['username'];
+       $email= $_POST['email'];
+       $password = $_POST['password'];
+   
+       // Insert data into the database for User
+       $sql = "INSERT INTO admins (username, email, password) VALUES ('$username', '$email', '$password')";
+   
+       if ($conn->query($sql) === TRUE) {
+           // Redirect to loginadmin.html
+           header("Location: loginadmin.html");
+           exit();
+       } else {
+           echo "Error: " . $sql . "<br>" . $conn->error;
+       }
 }
 
 // Close the database connection

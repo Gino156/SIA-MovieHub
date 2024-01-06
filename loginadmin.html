@@ -15,28 +15,34 @@
       <img src="logo/movielogo.png">
   </div>
 </header>
-             <body> 
-              <div class="wrapper">
-             <div class="form-wrapper sign-in ">
-                <form action="admindash.html" method="GET">
-                <h2>Welcome Admin!</h2>
-                <div class ="input-group">
-                  <input type="text" required>
-                  <label for="">Username</label>
-                  </div>
-                        <div class ="input-group">
-                    <input type="password" required>
-                  <label for="">Password</label>
-                </div>
-                        <div class="remember">
+<body>
+  <div class="wrapper">
+      <div class="form-wrapper sign-in ">
+          <form action="loginadmin.php" method="POST">
+              <h2>Welcome Admin!</h2>
+              <div class="input-group">
+                  <input type="text" name="username" required>
+                  <label for="username">Username</label>
+              </div>
+              <div class="input-group">
+                  <input type="password" name="password" required>
+                  <label for="password">Password</label>
+              </div>
+              <div class="remember">
                   <label for=""><input type="checkbox"> Remember me</label>
-                </div>
-                  <button type="submit">Login</button>
-                <div class="signUp-Link">
+              </div>
+              <?php if (isset($_GET['error'])) : ?>
+                  <div class="error-message">
+                      <?php echo htmlspecialchars($_GET['error']); ?>
+                  </div>
+              <?php endif; ?>
+              <button type="submit" name="admin_login">Login</button>
+              <div class="signUp-Link">
                   <p>Don't have an account? <a href="signUp.html" class="signUpBtn-link">Sign Up</a></p>
-                </div>
-              </form>
-            </div>
-          </div>
-    </body>
+              </div>
+          </form>
+      </div>
+  </div>
+</body>
+
 </html>
