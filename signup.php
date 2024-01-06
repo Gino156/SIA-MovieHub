@@ -36,3 +36,4 @@ if (isset($_POST['user_signup'])) {
 
 // Close the database connection
 $conn->close();
+?>
