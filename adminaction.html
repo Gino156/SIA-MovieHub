@@ -24,13 +24,103 @@
     <p class="background-text"></p>
     <div class="star-rating" id="starRating">
       <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
     </div>    
+
+    <button id="uploadButton" type="button">Upload</button>
+    <div class="container1">
+      <form id="uploadForm" action="save_data.php" method="post" enctype="multipart/form-data">
+        <table>  
+          <tr>
+            <td>
+              <p>Insert logo: </p>
+            </td>
+            <td>
+              <div class="file">
+                <input type="file" id="logo" name="logo" required>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p>Description: </p> 
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="description" name="description" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Poster Picture: </p>
+            </td>
+            <td>
+              <div class="file">
+                <input type="file" id="pic" name="pic" required>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Title:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="title" name="title" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Release Date:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="release" name="release" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Director:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="director" name="director" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Cast:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="cast" name="cast" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>video link:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="link" name="link" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="inputBox1">
+              <button type="submit">Submit</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
   </div>
-  
+
   <div class="container">
     <input type="radio" name="slider" class="d-none" id="s1" checked>
     <input type="radio" name="slider" class="d-none" id="s2">
@@ -59,154 +149,92 @@
         </div>
       </label>
 
-      <label for="s2" id="slide2">
-        <div class="card">
-          <div class="image">
-            <img src="image/guardian.jpg" alt="">
-            <div class="dots">
-              <div class="dot1"></div>
-              <div class="dot2"></div>
-              <div class="dot3"></div>
-            </div>
-          </div>
-          <div class="infos">
-            <span class="name">Guardian Of The Galaxy</span>
-            <span class="lorem"><b>Release date: </b> May 05, 2023 <br>
-              <b>Director: </b>James Gunn<br>
-              <b>Cast: </b>Chris Pratt | Zoe Saldana | Donnie Yen</span>
-          </div>
-          <a href="/contact" class="btn-contact">Watch Trailer</a>
-        </div>
-      </label>
+      <!-- Add similar labels for other slides (s2 to s5) -->
 
-      <label for="s3" id="slide3">
-        <div class="card">
-          <div class="image">
-            <img src="image/taken.jpg" alt="">
-            <div class="dots">
-              <div class="dot1"></div>
-              <div class="dot2"></div>
-              <div class="dot3"></div>
-            </div>
-          </div>
-          <div class="infos">
-            <span class="name">Taken 2</span>
-            <span class="lorem"><b>Release date: </b> October 04, 2012 <br>
-              <b>Director: </b>Olivier Megaton<br>
-              <b>Cast: </b>Maggie Grace | Liam Neeson | Famke Jansse</span>
-          </div>
-          <a href="/contact" class="btn-contact">Watch Trailer</a>
-        </div>
-      </label>
-
-      <label for="s4" id="slide4">
-        <div class="card">
-          <div class="image">
-            <img src="image/godzilla.jpeg" alt="">
-            <div class="dots">
-              <div class="dot1"></div>
-              <div class="dot2"></div>
-              <div class="dot3"></div>
-            </div>
-          </div>
-          <div class="infos">
-            <span class="name">Godzilla VS Kong</span>
-            <span class="lorem"><b>Release date: </b> March 21, 2021 <br>
-              <b>Director: </b>Adam Wingard<br>
-              <b>Cast: </b>Alexander Skarsgard | Milie Bobby Brown | Julian Dennison</span>
-          </div>
-          <a href="/contact" class="btn-contact">Watch Trailer</a>
-        </div>
-      </label>
-
-      <label for="s5" id="slide5">
-        <div class="card">
-          <div class="image">
-            <img src="image/oppenheimer.jpg" alt="">
-            <div class="dots">
-              <div class="dot1"></div>
-              <div class="dot2"></div>
-              <div class="dot3"></div>
-            </div>
-          </div>
-          <div class="infos">
-            <span class="name">Oppenheimer</span>
-            <span class="lorem"><b>Release date: </b> July 21, 2023 <br>
-              <b>Director: </b>Christopher Nolan<br>
-              <b>Cast: </b>Cillian Murphy | Florence  Pugh | Robert Downey Jr.</span>
-          </div>
-          <a href="/contact" class="btn-contact">Watch Trailer</a>
-        </div>
-      </label>
     </div>
   </div>
-</body>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const body = document.body;
-  const cards = document.querySelectorAll('.card');
-  const backgroundContainer = document.querySelector('.background-text-container');
-  const backgroundText = document.querySelector('.background-text');
-  const backgroundImages = document.querySelectorAll('.background-image');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const body = document.body;
+      const cards = document.querySelectorAll('.card');
+      const backgroundContainer = document.querySelector('.background-text-container');
+      const backgroundText = document.querySelector('.background-text');
+      const backgroundImages = document.querySelectorAll('.background-image');
 
-  function changeBy(bg, text, imageId) {
-    body.style.backgroundImage = `url('${bg}')`;
-    backgroundText.textContent = text;
+      function changeBy(bg, text, imageId) {
+        body.style.backgroundImage = `url('${bg}')`;
+        backgroundText.textContent = text;
 
-    backgroundImages.forEach(image => {
-      image.style.display = 'none';
+        backgroundImages.forEach(image => {
+          image.style.display = 'none';
+        });
+
+        const selectedImage = document.getElementById(imageId);
+        if (selectedImage) {
+          selectedImage.style.display = 'block';
+        }
+      }
+
+      changeBy('image/johnwick.jpg', 'With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.', 'bgImage1');
+
+      cards.forEach((card, index) => {
+        card.addEventListener('click', function () {
+          const imagePath = this.querySelector('img').getAttribute('src');
+          let newText = '';
+          let imageId = '';
+
+          switch (index) {
+            case 0:
+              newText = "With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.";
+              imageId = 'bgImage1';
+              break;
+            // Add cases for other slides (1 to 4)
+          }
+
+          changeBy(imagePath, newText, imageId);
+        });
+      });
+
+      function showForm() {
+        const form = document.getElementById('uploadForm');
+        form.style.display = 'block';
+      }
+
+      const uploadButton = document.getElementById('uploadButton');
+      if (uploadButton) {
+        uploadButton.addEventListener('click', showForm);
+      }
+
+      document.getElementById('uploadForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    fetch('save_data.php', {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(response => response.json())  // Parse response as JSON
+    .then(data => {
+        console.log(data);
+
+        // Check if the response contains any HTML indicating an error
+        if (data.hasOwnProperty('error')) {
+            console.error('Error in response:', data.error);
+            // Handle the error here, show a user-friendly message, etc.
+        } else {
+            // Process the response as needed
+            // Example: Update background image and card content with the latest data
+            changeBy(data.pic, data.description, 'bgImage1');
+            // You can add similar updates for other elements based on your requirements
+        }
+    })
+    .catch(error => console.error('Error saving data:', error));
+});
+
+
     });
+  </script>
 
-    const selectedImage = document.getElementById(imageId);
-    if (selectedImage) {
-      selectedImage.style.display = 'block';
-    }
-  }
-
-  changeBy('image/johnwick.jpg', 'With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.', 'bgImage1');
-
-  cards.forEach((card, index) => {
-  card.addEventListener('click', function () {
-    const imagePath = this.querySelector('img').getAttribute('src');
-    let newText = '';
-    let imageId = '';
-
-    switch (index) {
-      case 0:
-        newText = "With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.";
-        imageId = 'bgImage1';
-        break;
-      case 1:
-        newText = "Still reeling from the loss of Gamora, Peter Quill must rally his team to defend the universe and protect one of their own. If the mission is not completely successful, it could possibly lead to the end of the Guardians as we know them.";
-        imageId = 'bgImage2';
-        break;
-      case 2:
-        newText = "Two years ago, retired CIA agent Bryan Mills (Liam Neeson) used his particular set of skills to rescue his daughter, Kim (Maggie Grace), from kidnappers. Since then, Kim has been learning self-defense from her father, and Bryan has been on a personal mission to reunite with his ex-wife (Famke Janssen). In Istanbul, Bryan and his family cross paths with Murad (Rade Serbedzija), whose son died at Bryan's hand during Kim's rescue. Murad wants revenge, and he'll stop at nothing to get it.";
-        imageId = 'bgImage3';
-        break;
-      case 3:
-        newText = "Kong and his protectors undertake a perilous journey to find his true home. Along for the ride is Jia, an orphaned girl who has a unique and powerful bond with the mighty beast. However, they soon find themselves in the path of an enraged Godzilla as he cuts a swath of destruction across the globe. The initial confrontation between the two titans -- instigated by unseen forces -- is only the beginning of the mystery that lies deep within the core of the planet.";
-        imageId = 'bgImage4';
-        break;
-      case 4:
-        newText = "During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project. Oppenheimer and a team of scientists spend years developing and designing the atomic bomb. Their work comes to fruition on July 16, 1945, as they witness the world's first nuclear explosion, forever changing the course of history.";
-        imageId = 'bgImage5';
-        break;
-
-      default:
-        newText = "Background Text Here";
-        imageId = 'bgImage1';
-    }
-
-    changeBy(imagePath, newText, imageId);
-    document.getElementById('starRating');
-  });
-});
-});
-
-
-
-</script>
+</body>
 
 </html>
