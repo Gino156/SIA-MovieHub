@@ -149,10 +149,9 @@
         </div>
       </label>
 
-      <!-- Add similar labels for other slides (s2 to s5) -->
-
     </div>
   </div>
+</body>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -161,29 +160,29 @@
       const backgroundContainer = document.querySelector('.background-text-container');
       const backgroundText = document.querySelector('.background-text');
       const backgroundImages = document.querySelectorAll('.background-image');
-
+    
       function changeBy(bg, text, imageId) {
         body.style.backgroundImage = `url('${bg}')`;
         backgroundText.textContent = text;
-
+    
         backgroundImages.forEach(image => {
           image.style.display = 'none';
         });
-
+    
         const selectedImage = document.getElementById(imageId);
         if (selectedImage) {
           selectedImage.style.display = 'block';
         }
       }
-
+    
       changeBy('image/johnwick.jpg', 'With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.', 'bgImage1');
-
+    
       cards.forEach((card, index) => {
         card.addEventListener('click', function () {
           const imagePath = this.querySelector('img').getAttribute('src');
           let newText = '';
           let imageId = '';
-
+    
           switch (index) {
             case 0:
               newText = "With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.";
@@ -191,50 +190,45 @@
               break;
             // Add cases for other slides (1 to 4)
           }
-
+    
           changeBy(imagePath, newText, imageId);
         });
       });
-
+    
       function showForm() {
         const form = document.getElementById('uploadForm');
         form.style.display = 'block';
       }
-
+    
       const uploadButton = document.getElementById('uploadButton');
       if (uploadButton) {
         uploadButton.addEventListener('click', showForm);
       }
-
+    
       document.getElementById('uploadForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    fetch('save_data.php', {
-        method: 'POST',
-        body: new FormData(this),
-    })
-    .then(response => response.json())  // Parse response as JSON
-    .then(data => {
-        console.log(data);
-
-        // Check if the response contains any HTML indicating an error
-        if (data.hasOwnProperty('error')) {
-            console.error('Error in response:', data.error);
-            // Handle the error here, show a user-friendly message, etc.
-        } else {
-            // Process the response as needed
-            // Example: Update background image and card content with the latest data
-            changeBy(data.pic, data.description, 'bgImage1');
-            // You can add similar updates for other elements based on your requirements
-        }
-    })
-    .catch(error => console.error('Error saving data:', error));
-});
-
-
+        event.preventDefault();
+    
+        fetch('save_data.php', {
+          method: 'POST',
+          body: new FormData(this),
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+    
+            if (data.hasOwnProperty('error')) {
+              console.error('Error in response:', data.error);
+            } else {
+              // Update background image with the submitted poster picture
+              body.style.backgroundImage = `url('${data.pic}')`;
+    
+              // Redirect to view.html after successful submission
+              window.location.href = 'view.html';
+            }
+          })
+          .catch(error => console.error('Error saving data:', error));
+      });
     });
-  </script>
-
-</body>
+    </script>
 
 </html>
