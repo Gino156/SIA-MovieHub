@@ -16,8 +16,8 @@
     ACTION CATEGORY
   </div>
   <div class="background-text-container">
-    <img src="" alt="Logo" id="logo1">
-    <img src="" alt="Background Image 1" class="background-image" id="bgImage1">
+    <img src="" alt="Logo" id="logo1">  
+    <img src="" alt="" class="background-image" id="bgImage1">
     <p class="background-text" id="description"></p>
     <div class="star-rating" id="starRating">
       <span></span>
@@ -26,8 +26,93 @@
     <button id="uploadButton" type="button">Upload</button>
     <div class="container1">
       <form id="uploadForm" action="save_data.php" method="post" enctype="multipart/form-data">
-        <table>
-          
+        <table>  
+          <tr>
+            <td>
+              <p>Insert logo: </p>
+            </td>
+            <td>
+              <div class="file">
+                <input type="file" id="logo" name="logo" required>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p>Description: </p> 
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="description1" name="description" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Poster Picture: </p>
+            </td>
+            <td>
+              <div class="file">
+                <input type="file" id="pic1" name="pic" required>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Title:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="title1" name="title" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Release Date:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="release1" name="release" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Director:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="director1" name="director" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Cast:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="cast1" name="cast" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>video link:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="link1" name="link" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="inputBox1">
+              <button type="submit">Submit</button>
+            </td>
+          </tr>
         </table>
       </form>
     </div>
@@ -57,129 +142,69 @@
             <span id="director"><b> </b><br></span>
             <span id="cast"><b> </b></span>
           </div>
-          <a href="/contact" id="link" class="btn-watch-trailer">Watch Trailer</a>
+          <a href="#" id="link" class="btn-watch-trailer">Watch Trailer</a>
         </div>
       </label>
+
+      
     </div>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const body = document.body;
-      const cards = document.querySelectorAll('.card');
-      const backgroundContainer = document.querySelector('.background-text-container');
-      const backgroundText = document.querySelector('.background-text');
-      const backgroundImages = document.querySelectorAll('.background-image');
+      const uploadButton = document.getElementById('uploadButton');
+      const uploadForm = document.getElementById('uploadForm');
 
-      function changeBy(bg, text, imageId) {
-        body.style.backgroundImage = `url('${bg}')`;
-        backgroundText.textContent = text;
+      function updateCardContent(dataItem) {
+        document.getElementById('logo1').src = dataItem.logo || '';
+        document.getElementById('cardImage').src = dataItem.pic || '';
+        document.getElementById('title').textContent = dataItem.title || '';
+        document.getElementById('release').textContent = 'Release Date: ' + (dataItem.release_date || '');
+        document.getElementById('director').textContent = 'Director: ' + (dataItem.director || '');
+        document.getElementById('cast').textContent = 'Cast: ' + (dataItem.cast || '');
+        document.getElementById('link').href = dataItem.video_link || '#';
+        document.getElementById('description').textContent = dataItem.description || '';
 
-        backgroundImages.forEach(image => {
-          image.style.display = 'none';
-        });
-
-        const selectedImage = document.getElementById(imageId);
-        if (selectedImage) {
-          selectedImage.style.display = 'block';
-        }
+        const body = document.body;
+        body.style.backgroundImage = dataItem.pic ? `url('${dataItem.pic}')` : '';
+        document.getElementById('description').textContent = dataItem.description || '';
       }
 
-      // Initial data for the first card
-      changeBy('', '', '');
-
-      // Fetch and display latest data including logo
-      fetch('latest_data.php')
-        .then(response => response.json())
-        .then(data => {
-          if (data.hasOwnProperty('error')) {
-            console.error('Error in response:', data.error);
-          } else {
-            // Update logo with the latest data
-            logo1.src = data.logo; // Assuming 'logo' is the key in your data containing the logo image path
-          }
-        })
-        .catch(error => console.error('Error fetching latest data for logo:', error));
-
-      cards.forEach((card, index) => {
-        // Fetch latest data here
-        fetch('latest_data.php')
-          .then(response => response.json())
-          .then(data => {
-            let newText = '';
-
-            switch (index) {
-              case 0:
-                newText = `${data.description}`;
-                document.getElementById('description').textContent = newText;
-                break;
-              // Add cases for other slides (1 to 4)
-            }
-
-            // Update the card image directly
-            const cardImage = document.getElementById('cardImage');
-            cardImage.src = data.pic; // Assuming 'pic' is the key in your data containing the latest image path
-
-            changeBy(data.pic, newText, '');
-          })
-          .catch(error => console.error('Error fetching latest data:', error));
+      // Show the form when the upload button is clicked
+      uploadButton.addEventListener('click', function () {
+        uploadForm.style.display = 'block';
       });
 
-      function showForm() {
-        const form = document.getElementById('uploadForm');
-        form.style.display = 'block';
-      }
-
-      const uploadButton = document.getElementById('uploadButton');
-      if (uploadButton) {
-        uploadButton.addEventListener('click', showForm);
-      }
-
-      document.getElementById('uploadForm').addEventListener('submit', function (event) {
+      // Event listener for form submission
+      uploadForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
         fetch('save_data.php', {
           method: 'POST',
           body: new FormData(this),
         })
-          .then(response => response.json())
-          .then(data => {
-            console.log(data);
-
-            if (data.hasOwnProperty('error')) {
-              console.error('Error in response:', data.error);
-            } else {
-              // Redirect to view.html after successful submission
-              window.location.href = 'view.html';
-            }
-          })
-          .catch(error => console.error('Error saving data:', error));
+        .then(response => response.json())
+        .then(data => {
+          if (data.hasOwnProperty('error')) {
+            console.error('Error in response:', data.error);
+          } else {
+            updateCardContent(data);
+            window.location.href = 'view.html'; // Redirect if needed
+          }
+        })
+        .catch(error => console.error('Error saving data:', error));
       });
 
       // Fetch and display latest data
       fetch('latest_data.php')
         .then(response => response.json())
         .then(data => {
-          const cardImage = document.getElementById('cardImage');
-          const description = document.getElementById('description'); // Use the new ID
-          const title = document.getElementById('title');
-          const release = document.getElementById('release');
-          const director = document.getElementById('director');
-          const cast = document.getElementById('cast');
-          const videoLink = document.getElementById('link');
-
           if (data.hasOwnProperty('error')) {
             console.error('Error in response:', data.error);
           } else {
-            // Update background image with the latest data
-            body.style.backgroundImage = `url('${data.pic}')`;
-
-            cardImage.src = data.pic;
-            title.textContent = '' + data.title;
-            release.textContent = 'Release Date: ' + data.release_date;
-            director.textContent = 'Director: ' + data.director;
-            cast.textContent = 'Cast: ' + data.cast;
-            videoLink.innerHTML = '<a href="' + data.video_link + '">Watch Trailer</a>';
+            if (Array.isArray(data) && data.length > 0) {
+              updateCardContent(data[0]);
+            }
           }
         })
         .catch(error => console.error('Error fetching latest data:', error));

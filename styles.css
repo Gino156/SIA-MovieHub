@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light grey background */
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .action-category {
+    top: 20px;
+    left: 20px;
+    color: #000000;
+    font-size: 30px;
+    font-weight: 900;
+    z-index: 1000;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* subtle shadow */
+    border-radius: 8px; /* rounded corners */
+    overflow: hidden; /* ensures nothing spills outside the border */
+    background-color: #ffffff; /* white background for the card */
+    width: 300px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* ensures the image covers the area nicely */
+  }
+  
+  .card .title {
+    font-size: 20px;
+    color: #c91111; /* same color as the button */
+    text-align: center; /* center align the title */
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .card .info {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .card .info-label {
+    font-weight: bold;
+  }
+
+  .btn-watch-trailer {
+    display: block; /* make the button take the full width */
+    background-color: #c91111;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto; /* center the button */
+    transition: background-color 0.3s;
+  }
+  
+  .btn-watch-trailer:hover {
+    background-color: #9c0e0e; /* Darker shade for hover effect */
+  }
+  
+/* Rating Starts here */
+  .rating-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .rating-dropdown {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .total-ratings {
+    font-size: 16px;
+    color: #666;
+  }
