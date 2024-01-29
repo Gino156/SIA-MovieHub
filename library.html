@@ -1,174 +1,74 @@
 <!DOCTYPE html>
-<html lan="eng">
-    <title>
-        Library
-    </title>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/library.css" >
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/index.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <title>MOVIE HUB</title>
+</head>
 
-    <div class="container">
-        <nav>
-          <header class="stickyheader">
-            <div class="topnav" id="myTopnav">
-              <a href="index.html" class="active">Home</a>
-              <a href="library.html">Library</a>
-              <a href="contact_us.html">Contact</a>
-              <a href="about.html">About</a>
-              <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()">
-                <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                <a href="profile.html">User Profile</a>
-                <a href="loginuser.html">Sign Out</a>
-                </div>
-              </div>
-              </div>
-            </header>
-    </nav>
-
-        <main>Library</main>
-
-        <div id="mostrec">
-              <div class="responsive">
-                <div class="gallery">
-                  <a target="_blank" href="image/johnwick.jpg">
-                    <img src="image/johnwick.jpg" alt="">
-                  </a>
-                  <div class="desc">John Wick 4</div>
-                </div>
-              </div>
-              
-              <div class="responsive">
-                <div class="gallery">
-                  <a target="_blank" href="image/weathering.jpg">
-                    <img src="image/weathering.jpg" alt="Forest">
-                  </a>
-                  <div class="desc">Weathering With You</div>
-                </div>
-              </div>
-              
-              <div class="responsive">
-                <div class="gallery">
-                  <a target="_blank" href="image/titanic.jpeg">
-                    <img src="image/titanic.jpeg" alt="Northern Lights">
-                  </a>
-                  <div class="desc">Titanic</div>
-                </div>
-              </div>
-              
-              <div class="responsive">
-                <div class="gallery">
-                  <a target="_blank" href="image/oppenheimer.jpg">
-                    <img src="image/oppenheimer.jpg" alt="Mountains">
-                  </a>
-                  <div class="desc">Oppenheimer</div>
-              </div>
-              
-                <div class="mostrecdesc">Most Recent Views</div>
-              </div>
-              
-              <div class="clearfix"></div>
-            </div>
-            
-            <div id="fave">
-                <div class="responsive">
-                  <div class="gallery">
-                    <a target="_blank" href="image/onepiece.jpg">
-                      <img src="image/onepiece.jpg" alt="Cinque Terre">
-                    </a>
-                    <div class="desc">One Piece Film: Red
-                      <div class="del">
-                        <span class="material-symbols-outlined">
-                        delete
-                        </span></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="responsive">
-                  <div class="gallery">
-                    <a target="_blank" href="image/johnwick.jpg">
-                      <img src="image/johnwick.jpg" alt="Forest">
-                    </a>
-                    <div class="desc">John Wick
-                      <div class="del">
-                        <span class="material-symbols-outlined">
-                        delete
-                        </span></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="responsive">
-                  <div class="gallery">
-                    <a target="_blank" href="image/amoment.jpg">
-                      <img src="image/amoment.jpg" alt="Northern Lights">
-                    </a>
-                    <div class="desc">A Moment To Remember
-                      <div class="del">
-                        <span class="material-symbols-outlined">
-                        delete
-                        </span></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="responsive">
-                  <div class="gallery">
-                    <a target="_blank" href="image/yourlie.jpg">
-                      <img src="image/yourlie.jpg" alt="Mountains">
-                    </a>
-                    <div class="desc">Tenki No Ko
-                      <div class="del">
-                        <span class="material-symbols-outlined">
-                        delete
-                        </span></div>
-                    </div>
-                </div>
-                
-                  <div class="favoritedesc">My Favorite</div>
-                </div>
-                
-                <div class="clearfix"></div>
-              </div>
-
-              <div id="quick">
-                Quick Action<br>
-                <a href="#" id="library-link">>
-                    <img src="image/library.png" alt="Library Icon" class="action">
-                </a><br>
-                ADD FAVORITES
-            </div>              
-
-             <div id="footer">	
-                <div class="movtitle">
-                <p>MovieHub Philippines</p>
-                </div>
-            <ul class="social-icon">
-              <li><a href=""><ion-icon name="logo-facebook"></ion-icon></i></a></li>
-              <li><a href=""><ion-icon name="logo-youtube"></ion-icon></i></a></li>
-              <li><a href=""><ion-icon name="logo-instagram"></ion-icon></i></a></li>
-              <li><a href=""><ion-icon name="logo-tiktok"></ion-icon></i></a></li>
-              <div class="about"></div>
-              <li><a href="#" ><h5>Home</h5></li></a>
-              <li><a href="contact_us.html" ><h5>Contact Us</5></li></a>
-              <li><a href="about.html"><h5>About Us</h5></li></a>
-              <li><a href="Our_Team.html"><h5>Our Team</h5></li></a>
-              </div>
-            </div> 
-            </ul> 
-            <div class="footer-bottom">
-                <p>Copyright &copy;2023; Designed by <span class="designer">INCREDIBLE</span></p>
-            </div>
+<body>
+<!--topnav-->
+<header class="stickyheader">
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="active">Home</a>
+    <a href="library.html">Library</a>
+    <a href="contact_us.html">Contact</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="toggleDropdown()">
+      <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+      <a href="profile.html">User Profile</a>
+      <a href="loginuser.html">Sign Out</a>
+      </div>
     </div>
-    <script src="js/index.js"></script>
+    </div>
+  </header>
+  <!--end of header-->
+
+  <div class="container" id="libraryContainer"></div>
+
+<!--start of footer-->
+<Footer class="stickyfooter">	
+  <center><p>MovieHub Philippines</p></center>
+<ul class="social-icon">
+<li><a href="https://www.facebook.com/profile.php?id=61554954394661&mibextid=LQQJ4d"><ion-icon name="logo-facebook"></ion-icon></i></a></li>
+<li><a href="https://www.youtube.com/@moviehub.2024"><ion-icon name="logo-youtube"></ion-icon></i></a></li>
+<li><a href="https://www.instagram.com/moviehub_2024/?hl=en&fbclid=IwAR0Guvw88WBlc3i5mF1jPhcbGFDj01d0L9uBnvfvwsrVcAlq0XPVJ0VmmmM"><ion-icon name="logo-instagram"></ion-icon></i></a></li>
+<li><a href="https://www.tiktok.com/@moviiehub.2024?fbclid=IwAR2y7jxumN8YP19HPAz2waeqvXaJZFk-HkC8zx2WpWtJxG4Q26nZ7UoQlY0"><ion-icon name="logo-tiktok"></ion-icon></i></a></li>
+</ul>
+
+<ul class="footer-link">
+<li><a href="index.html"><h5>Home</h5></li></a>
+  <li><a href="contact_us.html"><h5>Contact Us</h5></li></a>
+<li><a href="about.html"><h5>About Us</h5></li></a>
+<li><a href="Our_Team.html"><h5>Our Team</h5></li></a>
+</ul> 
+
+<div class="footer-bottom">
+  <p>Copyright &copy;2023; Designed by <span class="designer">INCREDIBLE</span></p>
+</div>
+
+</Footer>
+<!--end of footer-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('fetch_saved_movies.php')
+      .then(response => response.json())
+      .then(savedMovies => {
+        const container = document.querySelector('.container');
+        // Assuming you have a way to get movie details from movie IDs
+        savedMovies.forEach(movieId => {
+          // Fetch and display each movie's details similar to script.js
+        });
+      })
+      .catch(error => console.error('Error:', error));
+  });
+  </script>
+<script src="js/index.js"></script>
 </body>
 </html>
