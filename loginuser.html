@@ -1,46 +1,49 @@
 <!DOCTYPE html>
-<html lan="eng">
-    <title>
-        Log In- as User
-    </title>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/login.css" >
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
-    <header>
-    <div class="logo">
-      <img src="logo/movielogo.png">
-  </div>
-</header>
-             <body> 
-              <div class="wrapper">
-             <div class="form-wrapper sign-in ">
-                <form action="index.html" method="GET">
-                <h2>Welcome User!</h2>
-                <div class ="input-group">
-                  <input type="text" required>
-                  <label for="">Username</label>
-                  </div>
-                        <div class ="input-group">
-                    <input type="password" required>
-                  <label for="">Password</label>
-                </div>
-                        <div class="remember">
-                  <label for=""><input type="checkbox"> Remember me</label>
-                </div>
-                  <button type="submit">Login</button>
-                <div class="signUp-Link">
-                  <p>Don't have an account? <a href="signUp.html" class="signUpBtn-link">Sign Up</a></p>
-                </div>
-              </form>
-            </div>
-          </div>
-              
+<html lang="en">
 
-              <script src="script.js"></script>
-   
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/login.css">
+    <title>Log In - as User</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo/movielogo.png">
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="form-wrapper sign-in ">
+            <form action="loginuser.php" method="POST"> 
+                <h2>Welcome User!</h2>
+                <div class="input-group">
+                    <input type="text" name="username" id="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember">
+                  <!-- Add an id attribute to the checkbox -->
+                  <input type="checkbox" id="rememberMe">
+                  <!-- Ensure the for attribute in the label matches the checkbox's id -->
+                  <label for="rememberMe">Remember me</label>
+              </div>
+                <?php if (isset($_GET['error'])) : ?>
+                    <div class="error-message">
+                      
+                <button type="submit" name="user_login">Login</button>
+                <div class="signUp-Link">
+                    <p>Don't have an account? <a href="signUp.html" class="signUpBtn-link">Sign Up</a></p>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+</body>
+
 </html>

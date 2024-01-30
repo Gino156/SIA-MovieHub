@@ -11,7 +11,7 @@
 <header>
   <div class="logo">
     <img src="logo/movielogo.png">
-</div>
+  </div>
 </header>
 <body>
     <div class="wrapper">
@@ -31,14 +31,19 @@
                     <label for="password">Password</label>
                 </div>
                 <div class="remember">
-                    <label for="terms"><input type="checkbox" name="terms">I agree to the terms & Conditions</label>
+                    <label for="terms"><input type="checkbox" id="terms" name="terms" required>I agree to the terms & Conditions</label>
+                    <p style="color: red; display: none;">Please check the box</p>
                 </div>
                 <div class="button-group">
                     <button type="submit" class="user-btn" name="user_signup">Sign Up as User</button>
-                    <button type="submit" class="user-btn" formaction="loginadmin.html" name="admin_signup">Sign Up as Admin</button>
+                    <button type="submit" class="user-btn" name="admin_signup">Sign Up as Admin</button>
+                    <!-- Removed formaction attribute from the admin button -->
                 </div>
                 <div class="signIn-Link">
-                    <p>Already have an account? <a href="login.html" class="signInBtn-link">Log In</a></p>
+                    <p>Already have an account? <br> Log In as: <br>
+                        <a href="loginuser.html" class="signInBtn-link">User</a><br>
+                        <a href="loginadmin.html" class="signInBtn-link"> Admin</a>
+                    </p>
                 </div>
             </form>
         </div>

@@ -1,74 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/index.css" >
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <title>MOVIE HUB</title>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-<!--topnav-->
-<header class="stickyheader">
-  <div class="topnav" id="myTopnav">
-    <a href="index.html" class="active">Home</a>
-    <a href="library.html">Library</a>
-    <a href="contact_us.html">Contact</a>
-    <a href="about.html">About</a>
-    <div class="dropdown">
-      <button class="dropbtn" onclick="toggleDropdown()">
-      <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-      <a href="profile.html">User Profile</a>
-      <a href="loginuser.html">Sign Out</a>
-      </div>
+    <div class="header">
+        <h1>Your Movie Library</h1>
     </div>
+
+        <!-- Loading indicator -->
+        <div id="loading" style="display:none;">Loading...</div>
+        <!-- Movie cards will be dynamically appended here -->
     </div>
-  </header>
-  <!--end of header-->
 
-  <div class="container" id="libraryContainer"></div>
+    <!-- Container to display saved movies -->
+    <div class="library-container">
+        <!-- Saved movies will be displayed here -->
+        <div id="library-loading" style="display:none;">Loading...</div>
+        <div id="library-error" style="display:none;">Error loading movies</div>
+    </div>
 
-<!--start of footer-->
-<Footer class="stickyfooter">	
-  <center><p>MovieHub Philippines</p></center>
-<ul class="social-icon">
-<li><a href="https://www.facebook.com/profile.php?id=61554954394661&mibextid=LQQJ4d"><ion-icon name="logo-facebook"></ion-icon></i></a></li>
-<li><a href="https://www.youtube.com/@moviehub.2024"><ion-icon name="logo-youtube"></ion-icon></i></a></li>
-<li><a href="https://www.instagram.com/moviehub_2024/?hl=en&fbclid=IwAR0Guvw88WBlc3i5mF1jPhcbGFDj01d0L9uBnvfvwsrVcAlq0XPVJ0VmmmM"><ion-icon name="logo-instagram"></ion-icon></i></a></li>
-<li><a href="https://www.tiktok.com/@moviiehub.2024?fbclid=IwAR2y7jxumN8YP19HPAz2waeqvXaJZFk-HkC8zx2WpWtJxG4Q26nZ7UoQlY0"><ion-icon name="logo-tiktok"></ion-icon></i></a></li>
-</ul>
-
-<ul class="footer-link">
-<li><a href="index.html"><h5>Home</h5></li></a>
-  <li><a href="contact_us.html"><h5>Contact Us</h5></li></a>
-<li><a href="about.html"><h5>About Us</h5></li></a>
-<li><a href="Our_Team.html"><h5>Our Team</h5></li></a>
-</ul> 
-
-<div class="footer-bottom">
-  <p>Copyright &copy;2023; Designed by <span class="designer">INCREDIBLE</span></p>
-</div>
-
-</Footer>
-<!--end of footer-->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    fetch('fetch_saved_movies.php')
-      .then(response => response.json())
-      .then(savedMovies => {
-        const container = document.querySelector('.container');
-        // Assuming you have a way to get movie details from movie IDs
-        savedMovies.forEach(movieId => {
-          // Fetch and display each movie's details similar to script.js
-        });
-      })
-      .catch(error => console.error('Error:', error));
-  });
-  </script>
-<script src="js/index.js"></script>
+    <script src="scriptlib.js"></script>
 </body>
 </html>

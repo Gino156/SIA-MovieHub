@@ -92,16 +92,16 @@ body {
     color: #666;
   }
 
-  .add-to-library-btn {
-    background-color: green;
-    color: white;
+  .save-movie-btn {
+    background-color: #4CAF50; /* Green background */
     border: none;
-    border-radius: 50%;
+    color: white;
     padding: 5px 10px;
-    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
-  }
-  
-  .add-to-library-btn:hover {
-    background-color: darkgreen;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
   }
