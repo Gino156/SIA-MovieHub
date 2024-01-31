@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Dashboard</title>
+        <link rel="stylesheet" href="CSS/profile.css">
+        <script src="js/adminProfile.js" defer></script>
+    </head>
+</head>
+<body>
+    <header class="stickyheader">
+        <div class="topnav" id="myTopnav">
+            <a href="admindash.html" class="active">Dashboard</a>
+            <a href="view.html">Upload</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()"> 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="profile.html">Admin Profile</a>
+                    <a href="loginadmin.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-section">
+        <h2>Admin Profile</h2>
+        <form action="update_admin_profile.php" method="post" enctype="multipart/form-data" class="profile-form">
+            <div class="form-group">
+                <label for="file">Profile Image:</label>
+                <input type="file" id="file" name="adminImage" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">New Password:</label>
+                <input type="password" id="password" name="new_password" placeholder="Enter new password">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update Profile">
+            </div>
+        </form>
+    </div>
+
+    <footer class="stickyfooter">  
+        <center><p>MovieHub Philippines</p></center>
+        <ul class="social-icon">
+            <!-- Social Media Icons Here -->
+        </ul>
+        <ul class="footer-link">
+            <!-- Footer Links Here -->
+        </ul> 
+        <div class="footer-bottom">
+            <p>Copyright &copy;2023; Designed by INCREDIBLE</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
