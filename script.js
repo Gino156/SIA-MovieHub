@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
               </select>
               <span class="total-ratings">(${item.total_ratings} Ratings, ${item.sum_ratings} Total Points)</span>
             </div>
-            <a href="${item.video_link}" target="_blank" class="btn-watch-trailer">Watch Trailer</a>
             <button class="save-movie-btn" data-movie-id="${item.id}">+</button>
+            <button class="btn-watch-trailer" data-video-link="${item.video_link}">Watch Trailer</button>
           </div>`;
 
         container.appendChild(card);
@@ -48,6 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Event listener for save button
         card.querySelector('.save-movie-btn').addEventListener('click', function() {
           saveMovie(item.id);
+        });
+
+        // Event listener for watch trailer button
+        card.querySelector('.btn-watch-trailer').addEventListener('click', function(event) {
+          event.preventDefault();
+          const videoLink = this.getAttribute('data-video-link');
+          const videoId = getYouTubeVideoId(videoLink);
+          playTrailer(videoId);
         });
       });
     })
@@ -101,8 +109,6 @@ function saveMovie(movieId) {
   });
 }
 
-// Function to fetch saved movies for the user
-// Function to fetch saved movies for the user
 function fetchSavedMovies() {
   fetch('fetch_saved_movies.php')
     .then(response => {
@@ -113,7 +119,7 @@ function fetchSavedMovies() {
     })
     .then(savedMovieIds => {
       const libraryContainer = document.querySelector('.library-container');
-      
+
       if (!Array.isArray(savedMovieIds)) {
         console.error('Expected an array of movie IDs, got:', savedMovieIds);
         return; // Exit the function if the data is not an array
@@ -132,7 +138,6 @@ function fetchSavedMovies() {
             return response.json();
           })
           .then(movieDetails => {
-            // Create and insert the movie card HTML into the library container
             const movieCard = createMovieCard(movieDetails);
             libraryContainer.appendChild(movieCard);
           })
@@ -146,7 +151,60 @@ function fetchSavedMovies() {
     });
 }
 
+// YouTube modal functionality
+function getYouTubeVideoId(url) {
+  const urlObj = new URL(url);
+  return urlObj.searchParams.get('v');
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetchSavedMovies(); // Call this function on page load
+let youtubePlayer; // Global variable to hold the YouTube player instance
+
+function playTrailer(videoId) {
+  const modal = document.getElementById('youtubeModal');
+  modal.style.display = 'block';
+
+  if (youtubePlayer) {
+    youtubePlayer.loadVideoById(videoId);
+  } else {
+    youtubePlayer = new YT.Player('youtubePlayer', {
+      height: '390',
+      width: '640',
+      videoId: videoId,
+      events: {
+        'onReady': function(event) {
+          event.target.playVideo();
+        }
+      }
+    });
+  }
+}
+
+function createMovieCard(movieDetails) {
+  const card = document.createElement('div');
+  card.className = 'movie-card';
+  // Populate the card with movie details
+  card.innerHTML = `
+    <img src="${movieDetails.pic}" alt="${movieDetails.title}">
+    <h3>${movieDetails.title}</h3>
+    <!-- Other movie details here -->
+  `;
+  return card;
+}
+
+// Close modal functionality
+document.querySelector('.close-modal').addEventListener('click', function() {
+  document.getElementById('youtubeModal').style.display = 'none';
+  if (youtubePlayer) {
+    youtubePlayer.stopVideo();
+  }
 });
+
+window.onclick = function(event) {
+  const modal = document.getElementById('youtubeModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+    if (youtubePlayer) {
+      youtubePlayer.stopVideo();
+    }
+  }
+};

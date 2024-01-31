@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Action Homepage</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
   <div class="action-category">
@@ -13,6 +14,14 @@
     <!-- Cards will be populated here -->
   </div>
   
+  <!-- Modal for YouTube Player -->
+  <div id="youtubeModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="youtubePlayer"></div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
