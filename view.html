@@ -1,217 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Upload</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="CSS/viewstyle.css">
-</head>
-
-<body style="background-image: url('');">
-  <div class="action-category">
-    ACTION CATEGORY
-    <button id="dashboardButton" type="button" onclick="window.location.href='admindash.html';">Go to Dashboard</button>
+    <head>
+        <title>Admin upload movie</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/admindash.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    </head>
+    <body background="CSS/admindashback.jpg">
+        <header class="stickyheader">
+            <div class="topnav" id="myTopnav">
+              <a href="admindash.html" class="active">Dashboard</a>
+              <a href="view.html">Upload</a>
+              <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()">
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                <a href="profile.html">Admin Profile</a>
+                <a href="loginadmin.html">Sign Out</a>
+                </div>
+              </div>
+              </div>
+            </header>
+<!--cards-->
+<div class="title">
+  <h1><center>UPLOAD YOUR MOVIE</center></h1>
   </div>
-  <div class="background-text-container">
-    <img src="" alt="Logo" id="logo1">  
-    <img src="" alt="" class="background-image" id="bgImage1">
-    <p class="background-text" id="description"></p>
-    <div class="star-rating" id="starRating">
-      <span></span>
+<section class="articles">
+  <article>
+    <div class="article-wrapper">
+      <figure>
+        <img src="image/johnwick.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Action</h2>
+        <p> 
+          Action movies typically rely on the execution of the plot rather than the plot itself.
+        </p>
+        <a href="uploadaction.html" class="read-more">
+          Click here <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
     </div>
-
-    <button id="uploadButton" type="button">Upload</button>
-    <div class="container1">
-      <form id="uploadForm" action="save_data.php" method="post" enctype="multipart/form-data">
-        <table>  
-          <tr>
-            <td>
-              <p>Insert logo: </p>
-            </td>
-            <td>
-              <div class="file">
-                <input type="file" id="logo" name="logo" required>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p>Description: </p> 
-            </td>
-            <td>
-              <div class="inputBox">
-                <textarea id="description1" name="description" required></textarea>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Poster Picture: </p>
-            </td>
-            <td>
-              <div class="file">
-                <input type="file" id="pic1" name="pic" required>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Title:</p>
-            </td>
-            <td>
-              <div class="inputBox">
-                <textarea id="title1" name="title" required></textarea>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Release Date:</p>
-            </td>
-            <td>
-              <div class="inputBox">
-                <textarea id="release1" name="release" required></textarea>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Director:</p>
-            </td>
-            <td>
-              <div class="inputBox">
-                <textarea id="director1" name="director" required></textarea>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Cast:</p>
-            </td>
-            <td>
-              <div class="inputBox">
-                <textarea id="cast1" name="cast" required></textarea>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>video link:</p>
-            </td>
-            <td>
-              <div class="inputBox">
-                <textarea id="link1" name="link" required></textarea>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" class="inputBox1">
-              <button type="submit">Submit</button>
-            </td>
-          </tr>
-        </table>
-      </form>
+  </article>
+  <article>
+    <div class="article-wrapper">
+      <figure>
+        <img src="image/weathering.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Anime</h2>
+        <p>
+          Anime is a Japanese animation style that is produced or influenced by it.
+        </p>
+        <a href="uploadanime.html" class="read-more">
+          Click here <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
     </div>
-  </div>
+  </article>
+  <article>
 
-  <div class="container">
-    <input type="radio" name="slider" class="d-none" id="s1" checked>
-    <input type="radio" name="slider" class="d-none" id="s2">
-    <input type="radio" name="slider" class="d-none" id="s3">
-    <input type="radio" name="slider" class="d-none" id="s4">
-    <input type="radio" name="slider" class="d-none" id="s5">
-
-    <div class="cards">
-      <label for="s1">
-        <div class="card">
-          <div class="image">
-            <img src="" id="cardImage" alt="">
-            <div class="dots">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-          <div class="infos">
-            <span id="title"></span>
-            <span id="release"><b></span> </b>
-            <span id="director"><b> </b><br></span>
-            <span id="cast"><b> </b></span>
-          </div>
-          <a href="#" id="link" class="btn-watch-trailer">Watch Trailer</a>
-        </div>
-      </label>
-
-      
+    <div class="article-wrapper">
+      <figure>
+        <img src="image/titanic.jpeg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Tragic</h2>
+        <p>
+          Tragic films are movies that depict sad or unfortunate events that arouse pity or sorrow.
+        </p>
+        <a href="tragichomepage.html" class="read-more">
+          Click here <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
     </div>
-  </div>
+  </article>
+    <article>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const uploadButton = document.getElementById('uploadButton');
-      const uploadForm = document.getElementById('uploadForm');
+    <div class="article-wrapper">
+      <figure>
+        <img src="https://m.media-amazon.com/images/M/MV5BNWFlODA4NGItZjk1OS00ZWQwLTkwNjQtOTM3MjQzYzU3NmY2XkEyXkFqcGdeQXVyNjA5NDgxNTg@._V1_.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Documentary</h2>
+        <p>
+          Documentary film speaks about situations.
+        </p>
+        <a href="#" class="read-more">
+          Click here <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+    <article>
 
-      function updateCardContent(dataItem) {
-        document.getElementById('logo1').src = dataItem.logo || '';
-        document.getElementById('cardImage').src = dataItem.pic || '';
-        document.getElementById('title').textContent = dataItem.title || '';
-        document.getElementById('release').textContent = 'Release Date: ' + (dataItem.release_date || '');
-        document.getElementById('director').textContent = 'Director: ' + (dataItem.director || '');
-        document.getElementById('cast').textContent = 'Cast: ' + (dataItem.cast || '');
-        document.getElementById('link').href = dataItem.video_link || '#';
-        document.getElementById('description').textContent = dataItem.description || '';
+    <div class="article-wrapper">
+      <figure>
+        <img src="https://www.pinkvilla.com/images/2023-11/543336114_daily-dose-of-sunshine.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Drama</h2>
+        <p>
+          It  is a genre that relies on the emotional and relational development of realistic characters.
+        </p>
+        <a href="#" class="read-more">
+          Click here <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
 
-        const body = document.body;
-        body.style.backgroundImage = dataItem.pic ? `url('${dataItem.pic}')` : '';
-        document.getElementById('description').textContent = dataItem.description || '';
-      }
+  <article>
+    <div class="article-wrapper">
+      <figure>
+        <img src="https://s3.drafthouse.com/images/made/warapesheader_1050_591_81_s_c1.jpg" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Sci-Fi</h2>
+        <p> It is a genre that explores speculative concepts often rooted in scientific.
+        </p>
+        <a href="#" class="read-more">
+          Click here <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
+<!--end of cards-->
 
-      // Show the form when the upload button is clicked
-      uploadButton.addEventListener('click', function () {
-        uploadForm.style.display = 'block';
-      });
+<!--start of footer-->
+<Footer class="stickyfooter">	
+  <center><p>MovieHub Philippines</p></center>
+<ul class="social-icon">
+<li><a href="https://www.facebook.com/profile.php?id=61554954394661&mibextid=LQQJ4d"><ion-icon name="logo-facebook"></ion-icon></i></a></li>
+<li><a href="https://www.youtube.com/@moviehub.2024"><ion-icon name="logo-youtube"></ion-icon></i></a></li>
+<li><a href="https://www.instagram.com/moviehub_2024/?hl=en&fbclid=IwAR0Guvw88WBlc3i5mF1jPhcbGFDj01d0L9uBnvfvwsrVcAlq0XPVJ0VmmmM"><ion-icon name="logo-instagram"></ion-icon></i></a></li>
+<li><a href="https://www.tiktok.com/@moviiehub.2024?fbclid=IwAR2y7jxumN8YP19HPAz2waeqvXaJZFk-HkC8zx2WpWtJxG4Q26nZ7UoQlY0"><ion-icon name="logo-tiktok"></ion-icon></i></a></li>
+</ul>
 
-      // Event listener for form submission
-      uploadForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+<ul class="footer-link">
+<li><a href="index.html"><h5>Home</h5></li></a>
+  <li><a href="contact_us.html"><h5>Contact Us</h5></li></a>
+<li><a href="about.html"><h5>About Us</h5></li></a>
+<li><a href="Our_Team.html"><h5>Our Team</h5></li></a>
+</ul> 
 
-        fetch('save_data.php', {
-          method: 'POST',
-          body: new FormData(this),
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.hasOwnProperty('error')) {
-            console.error('Error in response:', data.error);
-          } else {
-            updateCardContent(data);
-            window.location.href = 'view.html'; // Redirect if needed
-          }
-        })
-        .catch(error => console.error('Error saving data:', error));
-      });
+<div class="footer-bottom">
+  <p>Copyright &copy;2023; Designed by <span class="designer">INCREDIBLE</span></p>
+</div>
 
-      // Fetch and display latest data
-      fetch('latest_data.php')
-        .then(response => response.json())
-        .then(data => {
-          if (data.hasOwnProperty('error')) {
-            console.error('Error in response:', data.error);
-          } else {
-            if (Array.isArray(data) && data.length > 0) {
-              updateCardContent(data[0]);
-            }
-          }
-        })
-        .catch(error => console.error('Error fetching latest data:', error));
-    });
-  </script>
-
+</Footer>
+<!--end of footer-->
+<script src="js/index.js"></script>
 </body>
-
 </html>

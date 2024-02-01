@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Upload</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="CSS/viewstyle.css">
+</head>
+
+<body style="background-image: url('');">
+  <div class="action-category">
+    ACTION CATEGORY
+    <button id="dashboardButton" type="button" onclick="window.location.href='admindash.html';">Go to Dashboard</button>
+  </div>
+  <div class="background-text-container">
+    <img src="" alt="Logo" id="logo1">  
+    <img src="" alt="" class="background-image" id="bgImage1">
+    <p class="background-text" id="description"></p>
+    <div class="star-rating" id="starRating">
+      <span></span>
+    </div>
+
+    <button id="uploadButton" type="button">Upload</button>
+    <div class="container1">
+      <form id="uploadForm" action="save_data.php" method="post" enctype="multipart/form-data">
+        <table>  
+          <tr>
+            <td>
+              <p>Insert logo: </p>
+            </td>
+            <td>
+              <div class="file">
+                <input type="file" id="logo" name="logo" required>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p>Description: </p> 
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="description1" name="description" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Poster Picture: </p>
+            </td>
+            <td>
+              <div class="file">
+                <input type="file" id="pic1" name="pic" required>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Title:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="title1" name="title" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Release Date:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="release1" name="release" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Director:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="director1" name="director" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Cast:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="cast1" name="cast" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>video link:</p>
+            </td>
+            <td>
+              <div class="inputBox">
+                <textarea id="link1" name="link" required></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="inputBox1">
+              <button type="submit">Submit</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <input type="radio" name="slider" class="d-none" id="s1" checked>
+    <input type="radio" name="slider" class="d-none" id="s2">
+    <input type="radio" name="slider" class="d-none" id="s3">
+    <input type="radio" name="slider" class="d-none" id="s4">
+    <input type="radio" name="slider" class="d-none" id="s5">
+
+    <div class="cards">
+      <label for="s1">
+        <div class="card">
+          <div class="image">
+            <img src="" id="cardImage" alt="">
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span id="title"></span>
+            <span id="release"><b></span> </b>
+            <span id="director"><b> </b><br></span>
+            <span id="cast"><b> </b></span>
+          </div>
+          <a href="#" id="link" class="btn-watch-trailer">Watch Trailer</a>
+        </div>
+      </label>
+
+      
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const uploadButton = document.getElementById('uploadButton');
+      const uploadForm = document.getElementById('uploadForm');
+
+      function updateCardContent(dataItem) {
+        document.getElementById('logo1').src = dataItem.logo || '';
+        document.getElementById('cardImage').src = dataItem.pic || '';
+        document.getElementById('title').textContent = dataItem.title || '';
+        document.getElementById('release').textContent = 'Release Date: ' + (dataItem.release_date || '');
+        document.getElementById('director').textContent = 'Director: ' + (dataItem.director || '');
+        document.getElementById('cast').textContent = 'Cast: ' + (dataItem.cast || '');
+        document.getElementById('link').href = dataItem.video_link || '#';
+        document.getElementById('description').textContent = dataItem.description || '';
+
+        const body = document.body;
+        body.style.backgroundImage = dataItem.pic ? `url('${dataItem.pic}')` : '';
+        document.getElementById('description').textContent = dataItem.description || '';
+      }
+
+      // Show the form when the upload button is clicked
+      uploadButton.addEventListener('click', function () {
+        uploadForm.style.display = 'block';
+      });
+
+      // Event listener for form submission
+      uploadForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        fetch('save_data.php', {
+          method: 'POST',
+          body: new FormData(this),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.hasOwnProperty('error')) {
+            console.error('Error in response:', data.error);
+          } else {
+            updateCardContent(data);
+            window.location.href = 'uploadaction.html'; // Redirect if needed
+          }
+        })
+        .catch(error => console.error('Error saving data:', error));
+      });
+
+      // Fetch and display latest data
+      fetch('latest_data.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.hasOwnProperty('error')) {
+            console.error('Error in response:', data.error);
+          } else {
+            if (Array.isArray(data) && data.length > 0) {
+              updateCardContent(data[0]);
+            }
+          }
+        })
+        .catch(error => console.error('Error fetching latest data:', error));
+    });
+  </script>
+
+</body>
+
+</html>
