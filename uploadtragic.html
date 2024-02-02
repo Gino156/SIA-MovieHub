@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Upload Anime</title>
+  <title>Admin Upload Tragic</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="CSS/viewstyle.css">
@@ -13,7 +13,7 @@
 
 <body style="background-image: url('');">
   <div class="action-category">
-    ANIME CATEGORY
+    TRAGIC CATEGORY
     <button id="dashboardButton" type="button" onclick="window.location.href='admindash.html';">Go to Dashboard</button>
   </div>
   <div class="background-text-container">
@@ -26,7 +26,7 @@
 
     <button id="uploadButton" type="button">Upload</button>
     <div class="container1">
-      <form id="uploadForm" action="save_anime_data.php" method="post" enctype="multipart/form-data">
+      <form id="uploadForm" action="save_tragic_data.php" method="post" enctype="multipart/form-data">
         <table>  
           <tr>
             <td>
@@ -180,7 +180,7 @@
       uploadForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        fetch('save_anime_data.php', {
+        fetch('save_tragic_data.php', {
           method: 'POST',
           body: new FormData(this),
         })
@@ -190,14 +190,14 @@
             console.error('Error in response:', data.error);
           } else {
             updateCardContent(data);
-            window.location.href = 'uploadanime.html'; // Redirect if needed
+            window.location.href = 'uploadtragic.html'; // Redirect if needed
           }
         })
         .catch(error => console.error('Error saving data:', error));
       });
 
       // Fetch and display latest data
-      fetch('latest_anime_data.php')
+      fetch('latest_tragic_data.php')
         .then(response => response.json())
         .then(data => {
           if (data.hasOwnProperty('error')) {

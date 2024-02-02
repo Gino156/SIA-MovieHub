@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Fetch movie data from the server
-  fetch('latest_anime_data.php')
+  fetch('latest_tragic_data.php')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function handleRatingChange(movieId, rating) {
-  fetch('rate_animemovie.php?animeId=' + movieId + '&rating=' + rating)
+function handleRatingChange(tragicId, rating) {
+  fetch('rate_tragicmovie.php?tragicId=' + tragicId + '&rating=' + rating)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -73,7 +73,7 @@ function handleRatingChange(movieId, rating) {
       return response.json();
     })
     .then(updatedData => {
-      const cardToUpdate = document.querySelector('#card-' + movieId);
+      const cardToUpdate = document.querySelector('#card-' + tragicId);
       if (cardToUpdate) {
         cardToUpdate.querySelector('.total-ratings').textContent = `(${updatedData.total_ratings} Ratings, ${updatedData.sum_ratings} Total Points)`;
       }
@@ -83,13 +83,13 @@ function handleRatingChange(movieId, rating) {
     });
 }
 
-function saveMovie(movieId) {
-  fetch('save_anime.php', {
+function saveMovie(tragicId) {
+  fetch('save_tragic.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: 'movieId=' + movieId
+    body: 'tragicId=' + tragicId
   })
   .then(response => {
     if (!response.ok) {
@@ -110,18 +110,18 @@ function saveMovie(movieId) {
 }
 
 function fetchSavedMovies() {
-  fetch('fetch_saved_animes.php')
+  fetch('fetch_saved_tragics.php')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.json();
     })
-    .then(savedMovieIds => {
+    .then(savedTragicIds => {
       const libraryContainer = document.querySelector('.library-container');
 
       if (!Array.isArray(savedMovieIds)) {
-        console.error('Expected an array of movie IDs, got:', savedMovieIds);
+        console.error('Expected an array of movie IDs, got:', savedTragicIds);
         return; // Exit the function if the data is not an array
       }
 
@@ -129,17 +129,17 @@ function fetchSavedMovies() {
       libraryContainer.innerHTML = '';
 
       // Iterate over each saved movie ID and fetch its details
-      savedMovieIds.forEach(movieId => {
-        fetch(`get_anime_details.php?movieId=${movieId}`)
+      savedMovieIds.forEach(tragicId => {
+        fetch(`get_tragic_details.php?tragicId=${tragicId}`)
           .then(response => {
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return response.json();
           })
-          .then(movieDetails => {
-            const movieCard = createMovieCard(movieDetails);
-            libraryContainer.appendChild(movieCard);
+          .then(tragicDetails => {
+            const tragicCard = createMovieCard(tragicDetails);
+            libraryContainer.appendChild(tragicCard);
           })
           .catch(error => {
             console.error('Fetch error:', error.message);
@@ -179,13 +179,13 @@ function playTrailer(videoId) {
   }
 }
 
-function createMovieCard(movieDetails) {
+function createMovieCard(tragicDetails) {
   const card = document.createElement('div');
   card.className = 'movie-card';
   // Populate the card with movie details
   card.innerHTML = `
-    <img src="${movieDetails.pic}" alt="${movieDetails.title}">
-    <h3>${movieDetails.title}</h3>
+    <img src="${tragicDetails.pic}" alt="${tragicDetails.title}">
+    <h3>${tragicDetails.title}</h3>
     <!-- Other movie details here -->
   `;
   return card;
