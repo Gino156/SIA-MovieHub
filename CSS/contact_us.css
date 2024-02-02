@@ -1,141 +1,134 @@
-/* Reset default margin and padding */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Define root variables for reusability */
-:root {
+:root{
     --primary-color: rgb(11, 1, 1);
 }
 
-/* Define a common font for the body */
-body {
+body{
+    display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
     background: #00ffff65;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    margin: 0;
+    height: 120vh; 
+    margin: 0; 
+}
+/*start of topnav*/
+.topnav{
+	background-color: #f4eeee;
+	box-shadow: 0 0 10px rgb(7, 202, 209);
+	overflow: hidden;
+  }
+
+  .stickyheader{
+	position: sticky;
+	bottom: 20%;
+  }
+
+  .topnav a{
+	float: left;
+	display: inherit;
+	color: #131010;
+	text-align: center;
+	padding: 20px 18px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+
+  .topnav a:hover{
+	background-color: #00ffff;
+	color: black;
+  }
+  
+  .topnav a.active{
+	background-color: BLACK;
+	color: white;
+  }
+
+  .topnav .icon{
+	display: none;
+  }
+
+.dropdown{
+  float: left;
+  overflow: hidden;
 }
 
-/* Sticky header style */
-.stickyheader {
-    position: sticky;
-    bottom: 20%;
+.dropdown .dropbtn{
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
-/* Top navigation style */
-.topnav {
-    background-color: #f4eeee;
-    box-shadow: 0 0 10px rgb(7, 202, 209);
-    overflow: hidden;
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
+  background-color: #00ffff;
 }
 
-.topnav a {
-    float: left;
-    display: inherit;
-    color: #131010;
-    text-align: center;
-    padding: 20px 18px;
-    text-decoration: none;
-    font-size: 17px;
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-.topnav a:hover {
-    background-color: #00ffff;
-    color: black;
+.dropdown-content a{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
-.topnav a.active {
-    background-color: BLACK;
-    color: white;
+.dropdown-content a:hover{
+  background-color: #ddd;
 }
 
-.topnav .icon {
-    display: none;
+.show{
+  display: block;
 }
+/*end of topnav*/
 
-/* Dropdown menu style */
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: rgb(0, 0, 0);
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.navbar a:hover,
-.dropdown:hover .dropbtn,
-.dropbtn:focus {
-    background-color: #00ffff;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.show {
-    display: block;
-}
-
-/* Contact Us section style */
-.ContactUs {
+.ContactUs{
     position: relative;
     min-height: 100px;
-    padding: 50px;
-    display: flex;
+    padding: 50px 100px;
+    display: inline-block;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-.ContactUs .content {
+.ContactUs .conten{
     max-width: 800px;
     text-align: center;
 }
 
-.ContactUs .content h2 {
+.ContactUs .content h2{
     font-size: 36px;
     font-weight: 500;
     color: black;
 }
 
-.ContactUs .content p {
+.ContactUs .content p{
     font-weight: 600;
     color: black;
 }
 
-/* Contact Info and Form container style */
-.container {
+.container{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -143,19 +136,19 @@ body {
     margin-top: 30px;
 }
 
-.container .ContactInfo {
+.container .ContactInfo{
     width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-.container .ContactInfo .box {
+.container .ContactInfo .box{
     position: relative;
     padding: 20px 0;
     display: flex;
 }
 
-.container .ContactInfo .box .icon {
+.container .ContactInfo .box .icon{
     min-width: 60px;
     height: 60px;
     background: #fff;
@@ -166,7 +159,7 @@ body {
     font-size: 22px;
 }
 
-.container .ContactInfo .box .text {
+.container .ContactInfo .box .text{
     display: flex;
     margin-left: 20px;
     font-size: 16px;
@@ -175,14 +168,13 @@ body {
     font-weight: 700;
 }
 
-.container .ContactInfo .box .text h3 {
+.container .ContactInfo .box .text h3{
     font-weight: 900;
     color: black;
 }
 
-/* Contact Form style */
-.ContactForm {
-    width: 50%;
+.ContactForm{
+    width: 30%;
     padding: 15px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
@@ -190,11 +182,11 @@ body {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-.ContactForm:hover {
+.ContactForm:hover{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.ContactForm h2 {
+.ContactForm h2{
     text-align: center;
     font-size: 30px;
     color: var(--primary-color);
@@ -202,14 +194,14 @@ body {
     margin-bottom: 20px;
 }
 
-.ContactForm .inputBox {
+.ContactForm .inputBox{
     position: relative;
     width: 90%;
     margin-top: 20px;
 }
 
 .ContactForm .inputBox input,
-.ContactForm .inputBox textarea {
+.ContactForm .inputBox textarea{
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -222,11 +214,11 @@ body {
 }
 
 .ContactForm .inputBox input:focus,
-.ContactForm .inputBox textarea:focus {
+.ContactForm .inputBox textarea:focus{
     border-bottom: 2px solid rgba(252, 20, 20, 0.862);
 }
 
-.ContactForm .inputBox span {
+.ContactForm .inputBox span{
     position: absolute;
     left: 0;
     bottom: 0;
@@ -241,12 +233,12 @@ body {
 .ContactForm .inputBox input:focus ~ span,
 .ContactForm .inputBox input:valid ~ span,
 .ContactForm .inputBox textarea:focus ~ span,
-.ContactForm .inputBox textarea:valid ~ span {
+.ContactForm .inputBox textarea:valid ~ span{
     transform: translateY(-20px);
     color: red;
 }
 
-.ContactForm .inputBox input[type="submit"] {
+.ContactForm .inputBox input[type="submit"]{
     width: 100%;
     background: var(--primary-color);
     border: none;
@@ -257,72 +249,73 @@ body {
     transition: background 0.3s ease-in-out;
 }
 
-.ContactForm .inputBox input[type="submit"]:hover {
+.ContactForm .inputBox input[type="submit"]:hover{
     background: #f46363;
 }
 
-/* Footer section style */
-Footer {
-    background-color: rgba(255, 255, 255, 0.619);
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: auto;
-    box-shadow: 0 0 10px rgb(7, 202, 209);
+/*start of footer*/
+Footer{
+	background-color: rgba(255, 255, 255, 0.619);
+	text-align: center;	
+	text-transform: uppercase;
+	padding-top: -10px;
+	margin-top:auto;
+	box-shadow: 0 0 10px rgb(7, 202, 209);
+
+}
+.content{
+	width:100%;
+	margin: 0 auto;
+	padding-top: 35px;
 }
 
-.content {
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 35px;
+footer li{
+	list-style: none;
+	display: inline-block;
 }
 
-footer li {
-    list-style: none;
-    display: inline-block;
+.social-icon a{
+	background: black;
+	color: white;
+	padding: 10px;
+	border-radius: 90px;
+	display: flex;
+	font-size: 25px;	
+	margin-top: 10px;
+	margin-bottom: 5px;	
 }
 
-.social-icon a {
-    background: black;
-    color: white;
-    padding: 10px;
-    border-radius: 90px;
-    display: flex;
-    font-size: 25px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+.social-icon a:hover{
+	color: #00ffff;
 }
 
-.social-icon a:hover {
-    color: #00ffff;
-}
-
-.footer-link h5, a {
-    float: left;
-    display: inherit;
-    color: #131010;
-    text-align: center;
-    text-decoration: none;
-    margin-bottom: -5px;
+.footer-link h5, a{
+	float: left;
+	display: inherit;
+	color: #131010;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: -5px;
     padding: 2px;
+}	
+
+.footer-link h5:hover{
+	color: #00ffff;
 }
 
-.footer-link h5:hover {
-    color: #00ffff;
+.footer-bottom{
+	background-color:rgba(0, 4, 5, 0.768);
+	color: rgb(249, 242, 242);
+	padding: 15px;
+	margin-top: 20px;
 }
 
-.footer-bottom {
-    background-color: rgba(0, 4, 5, 0.768);
-    color: rgb(249, 242, 242);
-    padding: 15px;
-    margin-top: 20px;
+.footer-bottom p{
+	margin-bottom: 0px;
 }
+/*end of footer*/
 
-.footer-bottom p {
-    margin-bottom: 0px;
-}
-
-/* Responsive design for smaller screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px){
     .ContactUs {
         padding: 50px;
     }
