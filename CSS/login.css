@@ -1,39 +1,39 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
-	box-sizing:border-box;
+	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
-}
-
-.logo{
-	background-color:#0b0b0bbd;
-	overflow: hidden;
-	width: 166.5%;
+  }
+  
+  .logo {
+	background-color: rgba(11, 11, 11, 0.75); /* Transparency added */
+	width: 100%; /* Full width */
 	height: 90px;
 	box-shadow: 0 0 50px rgb(7, 202, 209);
-	}
-
- img{
-	position:left;
-	margin-top: -15px;
-	max-width: 150px;
-}
-
-body{
-	display:inline-block;
+	position: fixed; /* Fixed position to stay at the top */
+	top: 0; /* Align to the top */
+	left: 0; /* Align to the left */
+	z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  body {
+	display: flex;
 	justify-content: center;
+	align-items: center;
 	min-height: 100vh;
+	padding-top: 90px; /* Add padding to push the content down below the logo bar */
 	background-color: white;
 	background-image: url("https://wallpapercave.com/wp/wp1945898.jpg");
 	background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-.wrapper{
-	margin-top: 80px;
-	margin-left: 655.4px;
-	margin-bottom: 10px;
+	background-position: center center;
+	background-attachment: fixed;
+  }
+  
+  img {
+	max-width: 150px;
+  }
+  
+  .wrapper {
 	position: relative;
 	width: 400px;
 	height: 500px;
@@ -41,7 +41,7 @@ body{
 	border-radius: 20px;
 	padding: 10px 0 40px;
 	box-shadow: 0 0 50px rgb(7, 202, 209);
-}
+  }
 
 .form-wrapper{
 	display: flex;	

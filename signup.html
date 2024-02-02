@@ -3,46 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/signup.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="CSS/signup.css">
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<header>
-  <div class="logo">
-    <img src="logo/movielogo.png">
-  </div>
-</header>
 <body>
+    <header>
+        <div class="logo">
+            <img src="logo/movielogo.png" alt="Movie Logo">
+        </div>
+    </header>
     <div class="wrapper">
-        <div class="form-wrapper sign-Up">
+        <div class="form-wrapper">
             <form action="signup.php" method="post">
                 <h2>Sign Up</h2>
                 <div class="input-group">
-                    <input type="text" name="username" required>
+                    <input type="text" name="username" id="username" required>
                     <label for="username">Username</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="email" required>
+                    <input type="email" name="email" id="email" required>
                     <label for="email">Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" id="password" required>
                     <label for="password">Password</label>
                 </div>
                 <div class="remember">
-                    <label for="terms"><input type="checkbox" id="terms" name="terms" required>I agree to the terms & Conditions</label>
-                    <p style="color: red; display: none;">Please check the box</p>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms & Conditions</label>
                 </div>
                 <div class="button-group">
                     <button type="submit" class="user-btn" name="user_signup">Sign Up as User</button>
                     <button type="submit" class="user-btn" name="admin_signup">Sign Up as Admin</button>
-                    <!-- Removed formaction attribute from the admin button -->
                 </div>
                 <div class="signIn-Link">
                     <p>Already have an account? <br> Log In as: <br>
                         <a href="loginuser.html" class="signInBtn-link">User</a><br>
-                        <a href="loginadmin.html" class="signInBtn-link"> Admin</a>
+                        <a href="loginadmin.html" class="signInBtn-link">Admin</a>
                     </p>
                 </div>
             </form>
