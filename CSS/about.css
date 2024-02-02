@@ -1,0 +1,210 @@
+/*start of topnav*/
+.topnav{
+	background-color: #f4eeee;
+	box-shadow: 0 0 10px rgb(7, 202, 209);
+	overflow: hidden;
+  }
+
+  .stickyheader{
+	position: sticky;
+	bottom: 20%;
+  }
+
+  .topnav a{
+	float: left;
+	display: inherit;
+	color: #131010;
+	text-align: center;
+	padding: 20px 18px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+  
+  .topnav a:hover{
+	background-color: #00ffff;
+	color: black;
+  }
+
+  .topnav a.activ{
+	background-color: BLACK;
+	color: white;
+  }
+  
+  .topnav .icon{
+	display: none;
+  }
+
+.dropdown{
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn{
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
+  background-color: #00ffff;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover{
+  background-color: #ddd;
+}
+
+.show{
+  display: block;
+}
+/*end of topnav*/
+
+/*start of footer*/
+Footer{
+	background-color: rgba(255, 255, 255, 0.619);
+	text-align: center;	
+	text-transform: uppercase;
+	padding-top: -10px;
+	margin-top:auto;
+	box-shadow: 0 0 10px rgb(7, 202, 209);
+}
+
+.content{
+	width:100%;
+	margin: 0 auto;
+	padding-top: 35px;
+}
+
+footer li{
+	list-style: none;
+	display: inline-block;
+}
+
+.social-icon a{
+	background: black;
+	color: white;
+	padding: 10px;
+	border-radius: 90px;
+	display: flex;
+	font-size: 25px;	
+	margin-top: 10px;
+	margin-bottom: 5px;	
+}
+
+.social-icon a:hover{
+	color: #00ffff;
+}
+
+.footer-link h5, a{
+	float: left;
+	display: inherit;
+	color: #131010;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: -5px;
+    padding: 2px;
+}	
+
+.footer-link h5:hover{
+	color: #00ffff;
+}
+
+.footer-bottom{
+	background-color:rgba(0, 4, 5, 0.768);
+	color: rgb(249, 242, 242);
+	padding: 15px;
+	margin-top: 20px;
+}
+
+.footer-bottom p{
+	margin-bottom: 0px;
+}
+/*end of footer*/
+
+/* About Page Specific Styles */
+.about-section, .mission-section, .team-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.about-section h1, .mission-section h2, .team-section h2 {
+  color: #131010;
+}
+
+.about-section p, .mission-section p {
+  color: #333;
+  font-size: 17px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.member img {
+  width: 100%;
+  height: auto;
+}
+
+.member .container {
+  padding: 10px;
+}
+
+/* Enhance .member card layout */
+.member {
+    background-color: #f4eeee; /* Existing background, consider a slight variation if needed */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 240px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* New shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+  }
+  
+  .member:hover {
+    transform: translateY(-5px); /* Slightly raise the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  /* Add background color to the about section or entire page */
+  body {
+    background-color: #6fdbe7; /* A light greyish color, providing a subtle, modern look */
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Optionally, target a specific section if you want the background color applied to only part of the page */
+  .about-section {
+    background-color: #93e1e2; /* Example if you want to specifically target this section */
+  }
+  
+  /* Existing styles */
+  /* ...Your existing CSS... */
+  

@@ -1,6 +1,8 @@
-    function toggleDropdown() {
+function toggleDropdown() {
   var dropdownContent = document.querySelector('.dropdown-content');
-  dropdownContent.classList.toggle('show');
+  if (dropdownContent) {
+    dropdownContent.classList.toggle('show');
+  }
 }
 
 // Close the dropdown if the user clicks outside of it
@@ -16,9 +18,3 @@ window.onclick = function(event) {
     }
   }
 }
-
-
-
-
-
-
