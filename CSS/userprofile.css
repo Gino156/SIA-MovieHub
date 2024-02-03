@@ -1,18 +1,19 @@
-/*start of topnav*/
-.topnav{
+
+/* Start of Topnav */
+.topnav {
 	background-color: #f4eeee;
 	box-shadow: 0 0 10px rgb(7, 202, 209);
 	overflow: hidden;
   }
-
-  .stickyheader{
+  
+  .stickyheader {
 	position: sticky;
-	bottom: 20%;
+	top: 0;
   }
-
-  .topnav a{
+  
+  .topnav a {
 	float: left;
-	display: inherit;
+	display: block;
 	color: #131010;
 	text-align: center;
 	padding: 20px 18px;
@@ -20,126 +21,168 @@
 	font-size: 17px;
   }
   
-  .topnav a:hover{
+  .topnav a:hover {
 	background-color: #00ffff;
 	color: black;
   }
-
-  .topnav a.activ{
-	background-color: BLACK;
-	color: white;
+  
+  .dropdown {
+	float: left;
+	overflow: hidden;
   }
   
-  .topnav .icon{
-	display: none;
+  .dropdown .dropbtn {
+	cursor: pointer;
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: rgb(0, 0, 0);
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
   }
-
-.dropdown{
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn{
-  cursor: pointer;
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: rgb(0, 0, 0);
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
-  background-color: #00ffff;
-}
-
-.dropdown-content{
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a{
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover{
-  background-color: #ddd;
-}
-
-.show{
-  display: block;
-}
-/*end of topnav*/
-
-/*start of footer*/
-Footer{
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  .dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+	background-color: #ddd;
+  }
+  
+  .show {
+	display: block;
+  }
+  /* End of Topnav */
+  
+  /* Start of Footer */
+  footer {
 	background-color: rgba(255, 255, 255, 0.619);
-	text-align: center;	
+	text-align: center;  
 	text-transform: uppercase;
-	padding-top: -10px;
-	margin-top:auto;
+	padding: 20px 0;
 	box-shadow: 0 0 10px rgb(7, 202, 209);
-}
-
-.content{
-	width:100%;
-	margin: 0 auto;
-	padding-top: 35px;
-}
-
-footer li{
+	position: sticky;
+	bottom: 0;
+	width: 100%;
+  }
+  
+  footer ul {
+	padding: 0;
 	list-style: none;
+  }
+  
+  footer ul li {
 	display: inline-block;
-}
-
-.social-icon a{
+	margin: 0 10px;
+  }
+  
+  .social-icon a, .footer-link a {
+	color: #131010;
+	text-decoration: none;
+  }
+  
+  .social-icon a {
 	background: black;
 	color: white;
 	padding: 10px;
 	border-radius: 90px;
-	display: flex;
-	font-size: 25px;	
-	margin-top: 10px;
-	margin-bottom: 5px;	
-}
-
-.social-icon a:hover{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 25px;  
+  }
+  
+  .social-icon a:hover {
 	color: #00ffff;
-}
-
-.footer-link h5, a{
-	float: left;
-	display: inherit;
-	color: #131010;
-	text-align: center;
-	text-decoration: none;
-	margin-bottom: -5px;
-    padding: 2px;
-}	
-
-.footer-link h5:hover{
+  }
+  
+  .footer-link a {
+	display: block;
+	margin: 10px 0;
+  }
+  
+  .footer-link a:hover {
 	color: #00ffff;
-}
-
-.footer-bottom{
-	background-color:rgba(0, 4, 5, 0.768);
+  }
+  
+  .footer-bottom {
+	background-color: rgba(0, 4, 5, 0.768);
 	color: rgb(249, 242, 242);
 	padding: 15px;
 	margin-top: 20px;
-}
-
-.footer-bottom p{
-	margin-bottom: 0px;
-}
-/*end of footer*/
+  }
+  /* End of Footer */
+  
+  /* User Profile CSS */
+  .user-profile {
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin: 20px auto;
+	width: 80%;
+  }
+  
+  .user-profile .container {
+	max-width: 600px;
+	margin: auto;
+  }
+  
+  .user-profile h2 {
+	color: #333;
+	text-align: center;
+	margin-bottom: 20px;
+  }
+  
+  .password-change-form .form-group {
+	margin-bottom: 15px;
+  }
+  
+  .password-change-form label {
+	display: block;
+	margin-bottom: 5px;
+  }
+  
+  .password-change-form input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+  
+  .btn.submit-btn {
+	background-color: #00ffff;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: block;
+	width: 100%;
+  }
+  
+  .btn.submit-btn:hover {
+	background-color: #00dada;
+  }
+  
+  @media (max-width: 768px) {
+	.user-profile {
+	  width: 95%;
+	}
+  }
+  
