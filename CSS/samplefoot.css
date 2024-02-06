@@ -1,4 +1,3 @@
-/* Footer */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 html{
@@ -12,7 +11,7 @@ body{
 	font-family: "Roboto", sans-serif;
 	background: url(CSS/loginbg.jpg);
 }
-  /* Style the links inside the navigation bar */
+
   .topnav{
 	background-color: #c44848a7;
 	overflow: hidden;
@@ -31,19 +30,19 @@ body{
 	font-size: 17px;
   }
   
-  /* Change the color of links on hover */
+ 
   .topnav a:hover {
 	background-color: #ddd;
 	color: black;
   }
   
-  /* Add an active class to highlight the current page */
+
   .topnav a.active {
 	background-color: BLACK;
 	color: white;
   }
   
-  /* Hide the link that should open and close the topnav on small screens */
+
   .topnav .icon {
 	display: none;
   }

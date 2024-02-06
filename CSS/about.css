@@ -144,7 +144,6 @@ footer li{
 }
 /*end of footer*/
 
-/* About Page Specific Styles */
 .about-section, .mission-section, .team-section {
   padding: 20px;
   text-align: center;
@@ -177,25 +176,25 @@ footer li{
   padding: 10px;
 }
 
-/* Enhance .member card layout */
+
 .member {
-    background-color: #f4eeee; /* Existing background, consider a slight variation if needed */
+    background-color: #f4eeee; 
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
     width: 240px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* New shadow for depth */
-    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s;
   }
   
   .member:hover {
-    transform: translateY(-5px); /* Slightly raise the card on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
   }
   
-  /* Add background color to the about section or entire page */
+  
   body {
-    background-color: #6fdbe7; /* A light greyish color, providing a subtle, modern look */
+    background-color: #6fdbe7; 
     margin: 0;
     font-family: Arial, sans-serif;
   }
